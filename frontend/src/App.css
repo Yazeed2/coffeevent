@@ -73,4 +73,26 @@ body{
   background-size: cover;
   height: 532px;
 }
+.footer-info-row{
+  margin-left: 5%;
+  margin-right: 5%;
+  font-size: 13px;
+  font-weight: bolder;
+  text-align: center;
+}
+.footer-info-col{
+  width: 130px;
+}
+}
+@media only screen and (max-width: 749px){
+  .footer-info-row{
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: 9px;
+    font-weight: bolder;
+    text-align: center;
+  }
+  .footer-info-col{
+    width: 90px;
+  }
 }

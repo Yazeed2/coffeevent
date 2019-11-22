@@ -1,14 +1,31 @@
 import React from 'react'
-import { Container, Navbar } from 'react-bootstrap'
+import { Container, Navbar, NavDropdown, Nav } from 'react-bootstrap'
+import { FaMapMarkedAlt, FaUserCircle } from 'react-icons/fa'
 
 const Navigation = () => {
     return (
         <div>
-            <Container>
-                <Navbar expand="lg" variant="light" bg="none" style={{background:'transparent'}}>
-                    <Navbar.Brand href="#">COFFEVENT</Navbar.Brand>
-                </Navbar>
-            </Container>
+            <Navbar bg="light" expand="sm">
+            <Navbar.Brand style={{ fontSize: '24px', fontWeight: 'bolder'}} href="#"><img style={{marginRight:'10px'}} alt="" src="https://i.imgur.com/eFCHtTt.png" width="30" height="30"/>COFFEVENT</Navbar.Brand>
+            <FaMapMarkedAlt style={{marginLeft:'3%'}} size={30} />
+            <FaUserCircle style={{marginLeft:'3%',marginRight:'3%'}} size={30} />
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="mr-auto">
+
+                        <Nav.Link href="#home">Home</Nav.Link>
+                        <Nav.Link href="#link">Link</Nav.Link>
+                        
+                        <NavDropdown title="dropdown" id="basic-nav-dropdown">
+                            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                        </NavDropdown>
+                    </Nav>
+                </Navbar.Collapse>
+            </Navbar>
         </div >
     )
 }

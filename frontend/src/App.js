@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import './App.css';
-import { Row, Button, Jumbotron, Container } from 'react-bootstrap'
+import {Row, Button, Jumbotron, Container } from 'react-bootstrap'
 import HomePage from './components/HomePage'
 import Navigation from './components/Navigation'
-
+import Footer from './components/Footer'
 
 export default class App extends Component {
   state = {
@@ -40,8 +40,8 @@ export default class App extends Component {
           <div style={{ textAlign: 'center' }}>
             <Button className="ShowHideButton" onClick={() => { this.setState({ arry: [1, 2, 3, 4], showAll: true, hideThem: false }) }}>Hide</Button>
           </div>
-          : null}
-
+          : null}    
+        <Footer/> 
       </div>
     )
   }
