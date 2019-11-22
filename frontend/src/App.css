@@ -1,22 +1,76 @@
-.App {
-  text-align: center;
+body{
+  background-color: darkgray;
 }
 
-.App-logo {
-  height: 40vmin;
+.Card-Size{
+  width: 18rem;
+  margin-bottom: 60px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+.CardSize{
+  width:170px;
+  height: 185px;
 }
 
-.App-link {
-  color: #09d3ac;
+.Card-Image{
+  width:170px;
+  height: 185px;
+  border-radius: 17px;
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
+  
+}
+
+.Card-Body{
+  width: 147px;
+  height: 50px;
+  margin: '0 auto';
+}
+
+@media only screen and (max-width: 750px){
+
+  .jumbotron-style{
+    height: 412px;
+    background-image: url('https://i.imgur.com/1WxREyp.jpg');
+    background-size: cover;
+  }
+
+  .Card-Margin{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+.Card-Title{
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 7px;
+}
+
+.Card-Text{
+  font-size: 13px;
+}
+
+.Section-Title{
+  font-size: 20px;
+  text-align: left;
+  margin-left: 5%;
+  margin-bottom: -40px;
+}
+
+.ShowHideButton{
+  width: 222px;
+  height: 32px;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+@media only screen and (min-width: 750px){
+.jumbotron-style{
+  background-image: url('https://i.imgur.com/1WxREyp.jpg');
+  background-size: cover;
+  height: 532px;
+}
 }
