@@ -12,17 +12,56 @@ body{
   width:170px;
   height: 185px;
 }
-
-.Card-Image{
+@media only screen and (max-width: 750px){
+#Card-Image-home{
   width:170px;
   height: 185px;
   border-radius: 17px;
   display: block;
   margin: 0 auto;
   object-fit: cover;
-  
 }
+.Section-Title{
+  font-size: 20px;
+  text-align: left;
+  margin-left: 4%;
+  margin-bottom: -40px;
+  color: rgb(62, 85, 192);
+}
+}
+@media only screen and (min-width: 750px) and (max-width:1334px){
+  .Section-Title{
+    font-size: 30px;
+    text-align: left;
+    margin-left: 4%;
+    margin-bottom: -40px;
+    color: rgb(62, 85, 192);
+  }
+}
+@media only screen and (min-width: 1335px){
+  .Section-Title{
+    font-size: 40px;
+    text-align: left;
+    margin-left: 3%;
+    margin-bottom: -40px;
+    color: rgb(62, 85, 192);
+  }
+}
+@media only screen and (min-width: 750px){
+  #Card-Image-home{
+    width:224px;
+    height: 240px;
+    border-radius: 17px;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+  } 
+  /* #Card-Margin{
+    margin-left: auto;
+    margin-right: auto;
+  } */
 
+}
 .Card-Body{
   width: 147px;
   height: 50px;
@@ -37,7 +76,7 @@ body{
     background-size: cover;
   }
 
-  .Card-Margin{
+  #Card-Margin{
     margin-left: auto;
     margin-right: auto;
   }
@@ -54,12 +93,6 @@ body{
   font-size: 13px;
 }
 
-.Section-Title{
-  font-size: 20px;
-  text-align: left;
-  margin-left: 5%;
-  margin-bottom: -40px;
-}
 
 .ShowHideButton{
   width: 222px;

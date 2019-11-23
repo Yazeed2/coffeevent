@@ -4,10 +4,10 @@ import './Footer.css';
 
 const Footer = () => {
     return (
-        <div style={{backgroundColor:'gray', marginBottom:'0'}}>
+        <div className="Footer-div">
             <Row style={{marginBottom:"22px", marginLeft: 'auto', marginRight:'auto'}}>
-                <Col style={{marginTop:"50px", marginLeft:'16%'}}><img src="https://i.imgur.com/4wYSqBt.png" width="128px" height="89px"/></Col>
-                <Col style={{marginTop:"50px"}}><img src="https://i.imgur.com/RQ1NP8M.png" width="128px" height="99px"/></Col>
+                <Col id="Footer2030"><img src="https://i.imgur.com/4wYSqBt.png" className="Footer2030img" width="128px" height="89px"/></Col>
+                <Col style={{marginTop:"50px"}}><img src="https://i.imgur.com/RQ1NP8M.png" className="Footerlogoimg" width="128px" height="99px"/></Col>
             </Row>
             {/* <Row>
             <div className="col-md-6 col-sm-6" style={{ marginLeft: 'auto', marginRight:'auto', display: 'block'}}><img src="https://i.imgur.com/4wYSqBt.png" width="118px" height="79px"/></div>

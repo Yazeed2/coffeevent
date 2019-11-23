@@ -26,7 +26,7 @@ export default class App extends Component {
             </Container>
           </Jumbotron>
         </article>
-        {/* <Search/> */}
+        <Search/>
         <h1 className="Section-Title">THIS MONTH'S EVENTS</h1>
         <Row>
           {this.state.arry.map(() => {
