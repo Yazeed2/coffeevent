@@ -6,23 +6,26 @@ import Navigation from './components/Navigation'
 import Footer from './components/Footer/Footer'
 import Search from './components/Search/Search'
 import EventPage from './components/EventPage/EventPage'
+import data1 from './Tempdata'
+import Allshops from './components/AllShops/AllShops'
 
 export default class App extends Component {
   state = {
     arry: [1, 2, 3, 4],
     showAll: true,
-    hideThem: false
+    hideThem: false,
+    data: data1
   }
 
   render() {
-
-
+console.log("data 1 is :=")
+console.log(data1)
     return (
       <div>
         <Navigation />
 
         {/* <EventPage/> */}
-
+        {/* <Allshops/> */}
         <article className="main-intro">
           <Jumbotron fluid className="jumbotron-style">
             <Container className="jumbotron-content">
