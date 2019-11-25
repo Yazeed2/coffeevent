@@ -1,18 +1,16 @@
-import react from 'react'
-import data1 from '../../Tempdata'
 import {Card, Row,Button} from 'react-bootstrap'
-import './AllShops.css'
+import './AllEvents.css'
+import data1 from '../../Tempdata'
 
 import React, { Component } from 'react'
 
-export default class AllShops extends Component {
-    render(){
-    console.log("hello data")
-    console.log(data1)
+export default class AllEvents extends Component {
+    render() {
         return (
-            <div className="pageDiv">
+            <div>
+                <div className="pageDiv">
                 <br/><br/><br/>
-                <h1 className="pageTitle">AVAILABLE COFFEE SHOPS</h1>
+                <h1 className="pageTitle">AVAILABLE EVENTS</h1>
                 <Row>
                 {data1.map((data)=>{
                     return(
@@ -33,6 +31,7 @@ export default class AllShops extends Component {
                 </Row>
                 <br/><br/><br/>
                 <Button block style={{width:'40%',margin:'10% auto 20% auto'}} variant="outline-secondary">Go Back</Button>
+                </div>
             </div>
         )
     }

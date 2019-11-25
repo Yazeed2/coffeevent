@@ -109,9 +109,21 @@ body{
 
 }
 @media only screen and (max-width: 749px){
-  
+  .AccountLabel{
+  font-size: 20px;
+  margin-left: 20px;
+  margin-right: -8px;
+  }
 }
 
-@media only screen and (max-width: 649px){
+@media only screen and (min-width: 750px){
+  .AccountLabel{
+    font-size: 25px;
+    margin-left: 20px;
+    }
+}
+
+#dropDownicon{
   
+
 }

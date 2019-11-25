@@ -8,6 +8,8 @@ import Search from './components/Search/Search'
 import EventPage from './components/EventPage/EventPage'
 import data1 from './Tempdata'
 import Allshops from './components/AllShops/AllShops'
+import CofShopPage from './components/CofShopPage/CofShopPage'
+import AllEvents from './components/AllEvents/AllEvents'
 
 export default class App extends Component {
   state = {
@@ -23,10 +25,11 @@ console.log(data1)
     return (
       <div>
         <Navigation />
-
-        {/* <EventPage/> */}
+        {/* <CofShopPage/>
+        <EventPage/> */}
         {/* <Allshops/> */}
-        <article className="main-intro">
+        <AllEvents/>
+        {/* <article className="main-intro">
           <Jumbotron fluid className="jumbotron-style">
             <Container className="jumbotron-content">
               <h1>Hello i will be the filter search</h1>
@@ -49,7 +52,7 @@ console.log(data1)
           <div style={{ textAlign: 'center' }}>
             <Button className="ShowHideButton" onClick={() => { this.setState({ arry: [1, 2, 3, 4], showAll: true, hideThem: false }) }}>Hide</Button>
           </div>
-          : null}
+          : null} */}
        
         <Footer />
       </div>
