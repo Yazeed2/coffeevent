@@ -1,0 +1,19 @@
+.pageTitle{
+    text-align: center;
+    font-size: 46.55px;
+}
+
+@media only screen and (max-width: 930px){
+    .pageTitle{
+        font-size:5vw;
+    }
+}
+/* @media only screen and (min-width: 930px){
+
+} */
+
+.pageDiv{
+    width: 90%;
+    margin-left: 3%;
+    margin-right: 5%;
+}
