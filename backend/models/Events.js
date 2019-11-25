@@ -1,14 +1,14 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const User = new Schema(
+const Event = new Schema(
   {
-    coffeeName: {
-        type:String,
+    startingTime: {
+        type:Number,
     required:true
 },
- location: {
-     type:String,
+ endingTime: {
+     type:Number,
      required:true
  },
  photo: {
@@ -19,11 +19,22 @@ const User = new Schema(
     type:String,
     required:true
  },
- priceHour:{
-    type:Number,
-required:false
+ typeOfEvent:{
+    type:String,
+required:true
  },
- events:[]},
+ price:{
+    type:Number,
+required:true
+ },
+ public:{
+    type:Boolean,
+required:true
+ }, 
+ accepted:{
+    type:Boolean,
+required:true
+ }},
  
 
   { timestamps: true }
@@ -32,13 +43,5 @@ required:false
 
 
 
-const CoffeeShop = mongoose.model("coffeeShop", CoffeeShopSchema);
-module.exports = CoffeeShop;
-// "startingTime" : Number,
-// "endingTime" : Number,
-// "date" : Date,
-// "typeOfEvent" : String,
-// "price" : Number,
-// "accepted" : Boolean,
-// "public" : Boolean,
-// "eventDescription" : String
+const Events = mongoose.model("Event", Event);
+module.exports = Events;
