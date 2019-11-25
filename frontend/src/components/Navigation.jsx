@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { Container, Navbar, NavDropdown, Nav, DropdownButton,MenuItem} from 'react-bootstrap'
 import { FaMapMarkedAlt, FaUserCircle } from 'react-icons/fa'
 
@@ -27,8 +28,7 @@ const Navigation = () => {
 
         <FaMapMarkedAlt size={30} style={{marginLeft:'-5px', marginRight:'5px'}} />
             
-          
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                          <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
 
@@ -43,6 +43,7 @@ const Navigation = () => {
                         <Nav.Link href="#home">Home</Nav.Link>
                         <Nav.Link href="#link">Link</Nav.Link>
                     </Nav>
+
                 </Navbar.Collapse> 
             </Navbar>
 
@@ -50,6 +51,7 @@ const Navigation = () => {
             
 
     </div>
+
 
     )
 }
