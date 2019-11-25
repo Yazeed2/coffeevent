@@ -7,7 +7,9 @@ export default class EventPage extends Component {
         return (
             <div>
                 <Carousel >
+
                     <Carousel.Item id="CarouselEvent">
+
                         <img
                             className="d-block w-100"
                             src="https://i.imgur.com/881TPou.png"
