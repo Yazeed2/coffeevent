@@ -75,7 +75,6 @@ router.post('/login', (req, res) => {
         })
         .catch(err => res.send(err))
 })
-// logout
 
 
 
