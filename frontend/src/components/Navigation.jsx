@@ -13,7 +13,7 @@ const Navigation = () => {
       <span className="AccountLabel">Account</span>
 
     
-      <Nav pullRight>
+      
             <NavDropdown drop={'down'}  
                 title={
                        <FaUserCircle style={{marginLeft:'7px', marginRight:'7px',color: "black"}} size={30} />
@@ -23,9 +23,9 @@ const Navigation = () => {
                             <NavDropdown.Item href="#action/3.2">My Events</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>  
             </NavDropdown>
-        </Nav>
+        
 
-        <FaMapMarkedAlt size={30} style={{marginLeft:'10px', marginRight:'5px'}} />
+        <FaMapMarkedAlt size={30} style={{marginLeft:'-5px', marginRight:'5px'}} />
             
           
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />

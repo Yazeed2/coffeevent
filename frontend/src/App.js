@@ -25,8 +25,8 @@ console.log(data1)
     return (
       <div>
         <Navigation />
-        {/* <CofShopPage/>
-        <EventPage/> */}
+        {/* <CofShopPage/> */}
+        {/* <EventPage/> */}
         {/* <Allshops/> */}
         <AllEvents/>
         {/* <article className="main-intro">

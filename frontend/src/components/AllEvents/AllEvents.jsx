@@ -21,7 +21,7 @@ export default class AllEvents extends Component {
                 <Card.Title style={{fontSize: '16px', textAlign: 'left', marginTop: '7px'}}>{data.coffeeName}</Card.Title>
                         <Card.Text style={{fontSize: '13px'}}>
                             {data.description}
-                            {data.location}
+                            Starting Time: {data.startingTime}
                         </Card.Text>
                     </Card.Body>
                     </Card>

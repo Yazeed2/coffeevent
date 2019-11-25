@@ -12,12 +12,12 @@ const data1 =
          "public": true     
      },
      {
-        "coffeeName":'brew92',
+        "coffeeName":'Medd cafee',
          "startingTime": "3:errt pm",
          "endingTime": "6:30 pm",
          "date": "octobar 3rd",
          "typeOfEvent": "Music",
-         "price": 300,
+         "price": 250,
          "accepted": true,
          "public": true     
      },  {
@@ -26,42 +26,55 @@ const data1 =
          "endingTime": "6:30 pm",
          "date": "octobar 3rd",
          "typeOfEvent": "Music",
-         "price": 300,
-         "accepted": true,
-         "public": true     
-     },  {
-         "startingTime": "3:30 pm",
-         "endingTime": "6:30 pm",
-         "date": "octobar 3rd",
-         "typeOfEvent": "Music",
-         "price": 300,
+         "price": 250,
          "accepted": true,
          "public": true     
      }, {
-         "startingTime": "3:30 pm",
-         "endingTime": "6:30 pm",
-         "date": "octobar 3rd",
-         "typeOfEvent": "Music",
-         "price": 300,
-         "accepted": true,
-         "public": true     
-     }, {
-         "startingTime": "3:30 pm",
-         "endingTime": "6:30 pm",
-         "date": "octobar 3rd",
-         "typeOfEvent": "Music",
-         "price": 300,
-         "accepted": true,
-         "public": true     
-     }, {
-         "startingTime": "3:30 pm",
-         "endingTime": "6:30 pm",
-         "date": "octobar 3rd",
-         "typeOfEvent": "Music",
-         "price": 300,
-         "accepted": true,
-         "public": true     
-     }
+        "coffeeName":'medd Cafe',
+        "startingTime": "3:30 pm",
+        "endingTime": "6:30 pm",
+        "date": "octobar 3rd",
+        "typeOfEvent": "Music",
+        "price": 300,
+        "accepted": true,
+        "public": true     
+    },{
+        "coffeeName":'noob Cafe',
+        "startingTime": "3:30 pm",
+        "endingTime": "6:30 pm",
+        "date": "octobar 3rd",
+        "typeOfEvent": "Music",
+        "price": 350,
+        "accepted": true,
+        "public": true     
+    },{
+        "coffeeName":'medd Cafe',
+        "startingTime": "3:30 pm",
+        "endingTime": "6:30 pm",
+        "date": "octobar 3rd",
+        "typeOfEvent": "Music",
+        "price": 500,
+        "accepted": true,
+        "public": true     
+    },{
+        "coffeeName":'star Cafe',
+        "startingTime": "3:30 pm",
+        "endingTime": "6:30 pm",
+        "date": "octobar 3rd",
+        "typeOfEvent": "Music",
+        "price": 300,
+        "accepted": true,
+        "public": true     
+    },{
+        "coffeeName":'barn Cafe',
+        "startingTime": "3:30 pm",
+        "endingTime": "6:30 pm",
+        "date": "octobar 3rd",
+        "typeOfEvent": "Music",
+        "price": 300,
+        "accepted": true,
+        "public": true     
+    }
  
   ]
 
