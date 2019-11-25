@@ -5,8 +5,7 @@ class Profile extends Component {
   constructor() {
     super()
     this.state = {
-      firstname: '',
-      lastname: '',
+      name: '',
       email: '',
       errors: {}
     }
@@ -32,11 +31,7 @@ class Profile extends Component {
             <tbody>
               <tr>
                 <td>Fist Name</td>
-                <td>{this.state.firstname}</td>
-              </tr>
-              <tr>
-                <td>Last Name</td>
-                <td>{this.state.lastname}</td>
+                <td>{this.state.name}</td>
               </tr>
               <tr>
                 <td>Email</td>
