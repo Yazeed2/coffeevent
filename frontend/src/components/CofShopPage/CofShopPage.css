@@ -1,0 +1,63 @@
+.EventTitle{
+    display: inline-block;
+    text-align: left;
+    margin-left: 5%;
+    font-weight: bolder;
+    }
+    
+    .EventCapacity{
+    display: inline-block;
+    float: right;
+    margin-right: 5%;
+    margin-top: 1%
+    }
+    
+    .EventTitle{
+        font-size: 4vw;
+    }
+    .EventCapacity{
+        font-size: 3vw;
+    }
+    
+    @media only screen and (max-width: 1000px){
+        #CarouselEvent{
+            height: 35vh;
+        }
+        #CarouselImg{
+            height: 35vh;
+        }
+        
+    }
+    @media only screen and (min-width: 1000px) and (max-width: 1250px){
+        #CarouselImg{
+            height: 50vh;
+            width: 100vw;
+        }
+        
+        #CarouselEvent{
+            height: 50vh;
+            width: 100vw;
+        }
+    }
+    @media only screen and (min-width: 1250px) and (max-width: 1450px){
+        #CarouselImg{
+            height: 60vh;
+            width: 100vw;
+        }
+        
+        #CarouselEvent{
+            height: 60vh;
+            width: 100vw;
+        }
+    }
+    @media only screen and (min-width: 1450px){
+        #CarouselImg{
+            height: 70vh;
+            width: 100vw;
+        }
+        
+        #CarouselEvent{
+            height: 70vh;
+            width: 100vw;
+        }
+    }
