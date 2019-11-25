@@ -1,25 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import 'semantic-ui-css/semantic.min.css'
+import NavBar from './components/NavBar/NavBar'
+import { Container } from 'semantic-ui-react';
+import {   Route ,  BrowserRouter as Router } from 'react-router-dom'
+import Landing from './components/container/Landing'
+import Login from './components/container/Login'
+import Register from './components/container/Register'
+import Profile from './components/container/Profile'
+
 
 function App() {
   return (
+    // Router
+    <Router>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar />
+        <Route exact path='/' component={Landing} />
+        <Container  className="main">
+        <Route path='/login' component={Login} />
+        <Route path='/register' component={Register} />
+        <Route path='/profile' component={Profile} />
+      </Container>
     </div>
+    </Router>
   );
 }
 
