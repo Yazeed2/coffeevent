@@ -4,7 +4,7 @@ const CoffeeShops = require("../models/CoffeeShops")
 const Events = require('../models/Events')
 
 
-// create event 
+// create event test
 router.post ('/create', (req,res)=>{
     Events.create(req.body)
     .then(thing => res.send('created'))
