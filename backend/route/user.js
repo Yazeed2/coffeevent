@@ -11,8 +11,7 @@ process.env.SECRET_KEY = 'secret'
 // rigister steps (1-regist)
 router.post('/register', (req, res) => {
     const newUser = {
-        firstname: req.body.firstname,
-        lastname: req.body.lastname,
+        name: req.body.name,
         email: req.body.email,
         password: req.body.password
     }

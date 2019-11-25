@@ -20,14 +20,9 @@ onSubmitHandelr =(e)=>{
             // register Submit
             <Form onSubmit={this.onSubmitHandelr}>
             <Form.Field>
-                <label>First Name</label>
-                <input placeholder='First Name' name="firstname" 
+                <label>Name</label>
+                <input placeholder='Name' name="name" 
                 onChange ={this.onChangHandler}/>
-            </Form.Field>
-            <Form.Field>
-                <label>Last Name</label>
-                <input placeholder='Last Name' name="lastname"
-                 onChange ={this.onChangHandler} />
             </Form.Field>
             <Form.Field>
                 <label>email</label>
