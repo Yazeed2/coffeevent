@@ -142,14 +142,17 @@ export default class AllEvents extends Component {
                             <p style={{ marginLeft: '15.5%', marginTop: '2%', fontSize: '2vw', fontWeight: 'bold', marginRight: '13%' }}>Arty Cafe allows you to do just that, making it a perfect place to unwind after a long day at work. The cafe has art supplies ranging from coloring pencils to acrylic paints and brushes of all sizes.</p>
                         </div>
                         <br /><br /><br /><br /><br /><br /><br />
-                        <Button href="#topOfPage" onClick={() => { this.setState({ showEvent: false, showAll: true, coffeeName: "", startingTime: "", endingTime: "" }) }} style={{ marginTop: '20px' }}>Go Back</Button>
-                        <Button href="#topOfPage" onClick={() => { this.setState({ showEvent: false, showAll: false, showBook: true, showPay: false }) }} style={{ marginTop: '20px' }}>Book</Button>
+                        <Button href="#topOfPage" onClick={() => { this.setState({ showEvent: false, showAll: false, showBook: true, showPay: false }) }} style={{ marginTop: '20px'}}>Book</Button>
+                        <br />
+                        <Button href="#topOfPage" onClick={() => { this.setState({ showEvent: false, showAll: true, coffeeName: "", startingTime: "", endingTime: "" }) }} style={{ marginTop: '20px',marginLeft:'auto',marginRight:'auto', display:'block', width:'20%'}}>Go Back</Button>
                     </div> : null}
 
 
                     {this.state.showBook == true ?
-                        <div>
+                        <div style={{textAlign:'center'}}>
+                            <br /><br /><br />
                             <h1>OVERVIEW</h1>
+                            <br />
                             <h2>EventName: {this.state.coffeeName}</h2>
                             <h2>Start at: {this.state.startingTime}</h2>
                             <h2>End at: {this.state.endingTime}</h2>
@@ -159,10 +162,12 @@ export default class AllEvents extends Component {
                             <h3>How many tickets would you like?</h3>
 
                             <h4>Total price:</h4>
+                            <br /><br /><br />
 
                             <Button href="#topOfPage" onClick={() => { this.setState({ showPay: true, showBook: false, showEvent: false, showAll: false, coffeeName: "", startingTime: "", endingTime: "" }) }} variant={"secondary"}>Payment</Button>
                             <br />
-                            <Button href="#topOfPage" onClick={() => { this.setState({ showBook: false, showEvent: false, showAll: true, coffeeName: "", startingTime: "", endingTime: "" }) }} style={{ marginTop: '20px' }}>Go back to Events</Button>
+                            <Button href="#topOfPage" onClick={() => { this.setState({ showBook: false, showEvent: false, showAll: true, coffeeName: "", startingTime: "", endingTime: "" }) }} style={{ marginTop: '20px' }} variant="outline-primary">Go back to Events</Button>
+                            <br /><br />
                         </div> : null}
 
 

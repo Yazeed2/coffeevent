@@ -55,7 +55,7 @@ export default class AllShops extends Component {
                             </Row>
                             
                             <br /><br /><br />
-                            <Button block style={{  textAlign:'center', width: '60%'}} variant="outline-secondary">Go back to Home</Button>
+                            <Button block style={{  width: '40%', margin: '10% auto 20% auto' }} variant="outline-secondary">Go back to Home</Button>
                         </div>
                         </div>} </div>}
 
