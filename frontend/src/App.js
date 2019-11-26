@@ -12,11 +12,16 @@ import data1 from './Tempdata'
 import Allshops from './components/AllShops/AllShops'
 import CofShopPage from './components/CofShopPage/CofShopPage'
 import AllEvents from './components/AllEvents/AllEvents'
+import CreateEvent from './components/createEvent/CreateEvent'
+import createAcc from './components/createAcc/createAcc'
+import payment from './components/pay/payment'
+import sadface from './components/smileAndsad/sadFace'
+import smileface from './components/smileAndsad/smileFace'
+import sadFace from './components/smileAndsad/sadFace';
 import { Route, BrowserRouter, Switch, Link } from 'react-router-dom'
 import CreateEvent from './components/CreateEvent'
 import Signin from './components/sign/Signin'
 import Home from './components/Home'
-
 
 
 export default class App extends Component {
@@ -81,6 +86,16 @@ export default class App extends Component {
 <Route path="/about" component={AllEvents}/>
 <Route path="/galery" component={Allshops}/>
 <Route path="/Contact" component={CreateEvent}/>
+
+{/* <Route path="/Signin" component={Signin}/>
+<Route path="/createAcc" component={createAcc}/>
+<Route path="/home" component={Home}/>
+<Route path="/payment" component={payment}/>
+<Route path='/CreateEvent' component={CreateEvent}/>
+<Route path='/smileFace' component={smileface}/>
+<Route path='/sadFace' component={sadFace}/>*/}
+  
+
 {/* <Route path="/Contact" component={Register}/> */}
 <Route path="/Contact" component={Signin}/>
 <Route path="/home" component={Home}/>
@@ -89,6 +104,7 @@ export default class App extends Component {
 
           </Switch>
         </BrowserRouter>
+
 
 
         <Footer />

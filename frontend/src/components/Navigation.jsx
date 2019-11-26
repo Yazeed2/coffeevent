@@ -20,7 +20,7 @@ const Navigation = () => {
                        <FaUserCircle style={{marginLeft:'7px', marginRight:'7px',color: "black"}} size={30} />
                     } 
                 id="basic-nav-dropdown">
-                    <NavDropdown.Item href="#action/3.1">My Profile</NavDropdown.Item>
+                    <NavDropdown.Item href="/Signin">My Profile</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">My Events</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>  
             </NavDropdown>
