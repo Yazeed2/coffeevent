@@ -43,7 +43,7 @@ router.post('/register', (req, res) => {
 // Login steps (1-login) 
 router.post('/login', (req, res) => {
     //check email is exist or not
-
+    //
     User.findOne({
             email: req.body.email
         })
@@ -65,7 +65,7 @@ router.post('/login', (req, res) => {
                 }
                 // if password not the same
                 else {
-                    res.send("email is not currect")
+                    res.send("Password is not currect")
                 }
             } else {
                 // if email not exist
@@ -75,6 +75,32 @@ router.post('/login', (req, res) => {
         })
         .catch(err => res.send(err))
 })
+
+// change the passwoer 
+
+router.put('/changepassword/:token' , (req , res)=>{
+    
+// newPassword
+
+    var decoded = jwt.verify(req.params.token, 'secret')
+    bcrypt.hash(req.body.newPassword, 10, (err, hash) => {
+        var password = hash
+        User.findByIdAndUpdate(decoded.user._id , {password:password  }  )
+        .then(user => res.json({msg :`the password has change `  , user :user}))
+        .catch(err => res.send(err))
+    })
+ 
+
+})
+// get all user 
+
+router.get('/nouf' , (req , res)=>{
+
+    User.find()
+    .then(users => res.json(users))
+    .catch(err => res.send(err))
+} )
+
 
 
 

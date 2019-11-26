@@ -23,7 +23,7 @@ export default class createAcc extends Component {
           return (
          
   <div className = "formregister">
-            <Form onSubmit = {this.submit}>
+            <Form onSubmit = {this.submit} action='http://locahost:5100/auth/register' method="post">
           <Form.Group controlId="formBasicFirstName">
             <Form.Label>First Name</Form.Label>
             <Form.Control type="name" placeholder="First Name" name="name" onChange={this.onChange}/>
