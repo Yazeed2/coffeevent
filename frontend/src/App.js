@@ -6,13 +6,13 @@ import Navigation from './components/Navigation'
 import Footer from './components/Footer/Footer'
 import Search from './components/Search/Search'
 import EventPage from './components/EventPage/EventPage'
-import {Navbar, NavDropdown, Nav} from 'react-bootstrap'
+import { Navbar, NavDropdown, Nav } from 'react-bootstrap'
 import { FaMapMarkedAlt, FaUserCircle } from 'react-icons/fa'
 import data1 from './Tempdata'
 import Allshops from './components/AllShops/AllShops'
 import CofShopPage from './components/CofShopPage/CofShopPage'
 import AllEvents from './components/AllEvents/AllEvents'
-import {Route, BrowserRouter, Switch, Link} from 'react-router-dom'
+import { Route, BrowserRouter, Switch, Link } from 'react-router-dom'
 import CreateEvent from './components/CreateEvent'
 import Signin from './components/sign/Signin'
 import Home from './components/Home'
@@ -20,7 +20,7 @@ import Home from './components/Home'
 
 
 export default class App extends Component {
-  
+
   state = {
     arry: [1, 2, 3, 4],
     showAll: true,
@@ -30,11 +30,10 @@ export default class App extends Component {
   }
 
   render() {
-console.log("data 1 is :=")
-console.log(data1)
+    console.log("data 1 is :=")
+    console.log(data1)
     return (
       <div>
-
 
 <BrowserRouter>
 <Navigation/>
@@ -49,11 +48,10 @@ console.log(data1)
 
 
 
-  
-</Switch>
-</BrowserRouter>
+          </Switch>
+        </BrowserRouter>
 
-       
+
         <Footer />
       </div>
     )
