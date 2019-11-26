@@ -15,7 +15,7 @@ app.use('/events', events)
 
 
 mongoose.connect(
-  'mongodb://localhost/unicorn',
+  process.env.DEV_DB,
   { useNewUrlParser: true, useUnifiedTopology: true },
   () => {
     console.log("connected to mongoDB");
