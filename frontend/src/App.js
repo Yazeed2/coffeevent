@@ -29,8 +29,8 @@ console.log(data1)
         <Navigation />
         {/* <CofShopPage/> */}
         {/* <EventPage/> */}
-        {/* <Allshops/> */}
-        <AllEvents/>
+        <Allshops/>
+        {/* <AllEvents/> */}
         {/* <article className="main-intro">
 
           <Jumbotron fluid className="jumbotron-style">
