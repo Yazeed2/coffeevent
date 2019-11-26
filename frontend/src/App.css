@@ -12,6 +12,9 @@ body{
   width:170px;
   height: 185px;
 }
+#Card-Image-home:hover{
+  border: 2px solid rgb(128, 20, 138);
+}
 @media only screen and (max-width: 750px){
 #Card-Image-home{
   width:170px;

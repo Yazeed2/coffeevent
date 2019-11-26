@@ -1,11 +1,14 @@
-import { Card, Row, Button, Carousel, Image, Form, Container, Col } from 'react-bootstrap'
+import { Card, Row, Button, Carousel, Image, Form, Container, Col,ButtonToolbar } from 'react-bootstrap'
 import './AllEvents.css'
 import data1 from '../../Tempdata'
 import { FaPen } from 'react-icons/fa'
 import { MdLocationOn } from 'react-icons/md'
 import axios from "axios"
-
+import { FiMinusCircle } from 'react-icons/fi'
+import { IoMdAddCircleOutline } from 'react-icons/io'
 import React, { Component } from 'react'
+
+   
 
 export default class AllEvents extends Component {
 
@@ -20,7 +23,16 @@ export default class AllEvents extends Component {
         showBook: false,
         hideBook: true,
         showPay: false,
+        ticketsNumber: 1,
+        totalPrice: 200
     }
+
+
+    
+        
+    
+
+
     //     componentDidMount(){
     //         axios.get('http://localhost:5100/events/')
     //         .then(data=>{
@@ -39,7 +51,13 @@ export default class AllEvents extends Component {
         return (
 
             <div>
-                <a id="topOfPage"></a>
+            <a id="topOfPage"></a>
+                {this.state.ticketsNumber==0? this.setState({ticketsNumber:1}):null}
+                {this.state.totalPrice<200?this.setState({totalPrice:200}):null}
+                {this.state.totalPrice==400?null: this.state.ticketsNumber==2?this.setState({totalPrice:400}):null}
+                
+                
+                
                 <div>
                     {/* dont show any of them if they are both false */}
                     {this.state.showEvent == false && this.state.showAll == false ? null :
@@ -56,7 +74,7 @@ export default class AllEvents extends Component {
                                             return (
                                                 <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12 mb-2" id="Card-Margin" style={{ width: 'auto', }}>
                                                     <Card style={{ width: '170px', border: 'none', marginTop: '60px', marginLeft: 'auto', marginRight: 'auto', display: 'block' }}>
-                                                        <Card.Img id="Card-Image-home" variant="top" src="https://i.imgur.com/PU5Zex0.jpg" />
+                                                        <Card.Img href="#topOfPage" onClick={() => { this.setState({ showEvent: true, showAll: false, coffeeName: data.coffeeName, startingTime: data.startingTime, endingTime: data.endingTime }) }} id="Card-Image-home" variant="top" src="https://i.imgur.com/PU5Zex0.jpg" />
                                                         <Card.Body class="text-left" style={{ width: '147px', height: '50px', margin: '0 auto' }}>
                                                             <Card.Title style={{ fontSize: '16px', textAlign: 'left', marginTop: '7px' }}>{data.coffeeName}</Card.Title>
                                                             <Card.Text style={{ fontSize: '13px' }}>
@@ -65,7 +83,7 @@ export default class AllEvents extends Component {
                                                                 Ending Time: {data.endingTime}
                                                             </Card.Text>
                                                         </Card.Body>
-                                                        <Button href="#topOfPage" onClick={() => { this.setState({ showEvent: true, showAll: false, coffeeName: data.coffeeName, startingTime: data.startingTime, endingTime: data.endingTime }) }} style={{ marginTop: '20px' }}>View Event</Button>
+
                                                     </Card>
 
 
@@ -142,29 +160,34 @@ export default class AllEvents extends Component {
                             <p style={{ marginLeft: '15.5%', marginTop: '2%', fontSize: '2vw', fontWeight: 'bold', marginRight: '13%' }}>Arty Cafe allows you to do just that, making it a perfect place to unwind after a long day at work. The cafe has art supplies ranging from coloring pencils to acrylic paints and brushes of all sizes.</p>
                         </div>
                         <br /><br /><br /><br /><br /><br /><br />
-                        <Button href="#topOfPage" onClick={() => { this.setState({ showEvent: false, showAll: false, showBook: true, showPay: false }) }} style={{ marginTop: '20px'}}>Book</Button>
+                        <Button href="#topOfPage" onClick={() => { this.setState({ showEvent: false, showAll: false, showBook: true, showPay: false }) }} style={{ marginTop: '20px',marginLeft:'auto',marginRight:'auto', display:'block', width:'20%'}} variant={"secondary"}>Book</Button>
                         <br />
-                        <Button href="#topOfPage" onClick={() => { this.setState({ showEvent: false, showAll: true, coffeeName: "", startingTime: "", endingTime: "" }) }} style={{ marginTop: '20px',marginLeft:'auto',marginRight:'auto', display:'block', width:'20%'}}>Go Back</Button>
+                        <Button href="#topOfPage" onClick={() => { this.setState({ showEvent: false, showAll: true, coffeeName: "", startingTime: "", endingTime: "" }) }} style={{ margin:'20px auto 13% auto', display:'block', width:'10%'}} variant="outline-primary">Go Back</Button>
                     </div> : null}
 
 
                     {this.state.showBook == true ?
                         <div style={{textAlign:'center'}}>
                             <br /><br /><br />
-                            <h1>OVERVIEW</h1>
+                            <h1 style={{fontWeight:'bolder'}}>OVERVIEW</h1>
                             <br />
                             <h2>EventName: {this.state.coffeeName}</h2>
                             <h2>Start at: {this.state.startingTime}</h2>
                             <h2>End at: {this.state.endingTime}</h2>
                             <h2>Located at: </h2>
 
-
+                            <br /><br/>
                             <h3>How many tickets would you like?</h3>
-
-                            <h4>Total price:</h4>
+                            
+                            <ButtonToolbar style={{margin:'auto',display:'block'}}>
+                            <FiMinusCircle onClick={() => { this.setState({ ticketsNumber: this.state.ticketsNumber-1, totalPrice: this.state.totalPrice-200})  }} size={37}/><Button style={{width:'15%'}} variant="warning">{this.state.ticketsNumber}</Button><div onClick={() => { this.setState({ totalPrice: 200*(this.state.ticketsNumber+1) })}} style={{display:'inline'}}><IoMdAddCircleOutline onClick={() => { this.setState({ ticketsNumber: this.state.ticketsNumber+1 })}}  size={40}/></div>
+                            </ButtonToolbar>
+                            <br/>
+                            
+                    <h4>Total price: {this.state.totalPrice} SAR</h4>
                             <br /><br /><br />
 
-                            <Button href="#topOfPage" onClick={() => { this.setState({ showPay: true, showBook: false, showEvent: false, showAll: false, coffeeName: "", startingTime: "", endingTime: "" }) }} variant={"secondary"}>Payment</Button>
+                            <Button href="#topOfPage" onClick={() => { this.setState({ showPay: true, showBook: false, showEvent: false, showAll: false, coffeeName: "", startingTime: "", endingTime: "" }) }} style={{width:'20%'}} variant={"secondary"}>Payment</Button>
                             <br />
                             <Button href="#topOfPage" onClick={() => { this.setState({ showBook: false, showEvent: false, showAll: true, coffeeName: "", startingTime: "", endingTime: "" }) }} style={{ marginTop: '20px' }} variant="outline-primary">Go back to Events</Button>
                             <br /><br />
