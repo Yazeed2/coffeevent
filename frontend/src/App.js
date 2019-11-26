@@ -15,7 +15,9 @@ import AllEvents from './components/AllEvents/AllEvents'
 import { Route, BrowserRouter, Switch, Link } from 'react-router-dom'
 import CreateEvent from './components/CreateEvent'
 import Signin from './components/sign/Signin'
-import 
+import Home from './components/Home'
+
+
 
 export default class App extends Component {
 
@@ -75,13 +77,13 @@ export default class App extends Component {
           </Navbar>
 
 
-          <Switch>
-            <Route path="/about" component={AllEvents} />
-            <Route path="/galery" component={Allshops} />
-            <Route path="/Contact" component={CreateEvent} />
-            <Route path="/Contact" component={Register} />
-            <Route path="/Contact" component={Signin} />
-
+<Switch>
+<Route path="/about" component={AllEvents}/>
+<Route path="/galery" component={Allshops}/>
+<Route path="/Contact" component={CreateEvent}/>
+{/* <Route path="/Contact" component={Register}/> */}
+<Route path="/Contact" component={Signin}/>
+<Route path="/home" component={Home}/>
 
 
 
