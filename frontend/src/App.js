@@ -19,7 +19,7 @@ import sadface from './components/smileAndsad/sadFace'
 import smileface from './components/smileAndsad/smileFace'
 import sadFace from './components/smileAndsad/sadFace';
 import { Route, BrowserRouter, Switch, Link } from 'react-router-dom'
-import CreateEvent from './components/CreateEvent'
+
 import Signin from './components/sign/Signin'
 import Home from './components/Home'
 
@@ -87,13 +87,13 @@ export default class App extends Component {
 <Route path="/galery" component={Allshops}/>
 <Route path="/Contact" component={CreateEvent}/>
 
-{/* <Route path="/Signin" component={Signin}/>
+ <Route path="/Signin" component={Signin}/>
 <Route path="/createAcc" component={createAcc}/>
 <Route path="/home" component={Home}/>
 <Route path="/payment" component={payment}/>
 <Route path='/CreateEvent' component={CreateEvent}/>
 <Route path='/smileFace' component={smileface}/>
-<Route path='/sadFace' component={sadFace}/>*/}
+<Route path='/sadFace' component={sadFace}/>
   
 
 {/* <Route path="/Contact" component={Register}/> */}
