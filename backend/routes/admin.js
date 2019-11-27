@@ -1,13 +1,33 @@
 const AdminBro = require('admin-bro')
 const AdminBroExpress = require('admin-bro-expressjs')
 const AdminBroMongoose = require('admin-bro-mongoose')
-const dotenv = require('../dotenv/config')
 
 const mongoose = require('mongoose')
 
+// databases: [mongoose],
+
 const adminBro = new AdminBro({
-  databases: [mongoose],
+  databases: [],
   rootPath: '/admin',
+  branding: {
+    logo: 'https://i.imgur.com/eFCHtTt.png',
+    companyName: 'Unicorn'
+  },
+  // resources: [{
+  //   resource: "database section name",
+  //   options:{
+  //     parent:{
+  //       name: 'Admin Content',
+  //       icon: 'fas fa-cogs',
+  //     },
+  //     properties:{
+  //       description:{
+  //         type: 'richtext',
+  //       },
+        
+  //     },
+  //   },
+  // }],
 })
 
 const ADMIN = {
