@@ -195,7 +195,7 @@ body{
     margin: 0 auto;
     width: 350px;
     background-color: rgba(159, 151, 157, 0.5);
-    margin-right: 10%;
+    margin-right: 13%;
     }
 }
 @media only screen and (min-width: 750px){
@@ -232,3 +232,4 @@ body{
   appearance: none;
   background: url(https://i.imgur.com/vhhhiyl.png) 96% / 10% no-repeat #eee;
 }
+
