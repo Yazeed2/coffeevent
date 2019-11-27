@@ -78,7 +78,7 @@ router.post('/login', (req, res) => {
 
 // change the passwoer 
 
-router.put('/changepassword/:token' , (req , res)=>{
+router.post('/changepassword/:token' , (req , res)=>{
     
 // newPassword
 

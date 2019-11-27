@@ -4,36 +4,36 @@ const Schema = mongoose.Schema;
 const Event = new Schema(
   {
     startingTime: {
-        type:Number,
+        type:String,
     required:true
 },
  endingTime: {
-     type:Number,
+     type:String,
      required:true
  },
  photo: {
      type:String,
-     required:true
+     required:false
  },
  description: {
     type:String,
-    required:true
+    required:false
  },
  typeOfEvent:{
     type:String,
 required:true
  },
  price:{
-    type:Number,
-required:true
+    type:String,
+required:false
  },
  public:{
     type:Boolean,
-required:true
+required:false
  }, 
  accepted:{
     type:Boolean,
-required:true
+required:false
  },
 
  name:{
@@ -42,7 +42,27 @@ required:true
  },
  coffeeShopName:{
     type:String,
-required:true
+required:false
+ },
+ capacity:{
+     type:String,
+     required:true
+ },
+ date:{
+     type:Date,
+     required:true
+ },
+ thingsEvent:{
+     type:String,
+     required:true
+ },
+ options:{
+     type:String,
+     required:true
+ },
+ priOrpub:{
+     type:String,
+     required:true
  }
 
 
