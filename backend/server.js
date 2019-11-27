@@ -4,7 +4,9 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv/config");
 const events  = require('./routes/events')
 const cors = require('cors')
-const auth = require('./routes/user')
+
+const user = require('./routes/user')
+const admin = require('./routes/admin')
 
 
 app.use(express.json());
@@ -23,6 +25,10 @@ mongoose.connect(
     console.log("connected to mongoDB");
   }
 );
+
+app.use('/users', user)
+app.use('/users/userId/events', events)
+app.use('/admin',admin)
 
 
 app.get("*", (req, res) => {

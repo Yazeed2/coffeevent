@@ -37,9 +37,9 @@ export default class AllShops extends Component {
                             <Row>
                                 {data1.map((data) => {
                                     return (
-                                        <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12 mb-2" id="Card-Margin" style={{ width: 'auto', }}>
+                                        <div onClick={() => { this.setState({ coffeeName: data.coffeeName, description: data.description, price: data.price, showAll: false, showShop: true }) }} className="col-lg-3 col-md-3 col-sm-6 col-xs-12 mb-2" id="Card-Margin" style={{ width: 'auto', }}>
                                             <Card style={{ width: '170px', border: 'none', marginTop: '60px', marginLeft: 'auto', marginRight: 'auto', display: 'block' }}>
-                                                <Card.Img onClick={() => { this.setState({ coffeeName: data.coffeeName, description: data.description, price: data.price, showAll: false, showShop: true }) }} id="Card-Image-home" variant="top" src="https://i.imgur.com/PU5Zex0.jpg" />
+                                                <Card.Img id="Card-Image-home" variant="top" src="https://i.imgur.com/PU5Zex0.jpg" />
                                                 <Card.Body class="text-left" style={{ width: '147px', height: '50px', margin: '0 auto' }}>
                                                     <Card.Title style={{ fontSize: '16px', textAlign: 'left', marginTop: '7px' }}>{data.coffeeName}</Card.Title>
                                                     <Card.Text style={{ fontSize: '13px' }}>
@@ -55,7 +55,7 @@ export default class AllShops extends Component {
                             </Row>
                             
                             <br /><br /><br />
-                            <Button block style={{  width: '40%', margin: '10% auto 20% auto' }} variant="outline-secondary">Go back to Home</Button>
+                            <Button block style={{ width: '40%', margin: '10% auto 20% auto' }} variant="outline-secondary">Go back to Home</Button>
                         </div>
                         </div>} </div>}
 
@@ -131,3 +131,5 @@ export default class AllShops extends Component {
         )
     }
 }
+
+

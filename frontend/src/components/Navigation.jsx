@@ -8,25 +8,25 @@ const Navigation = () => {
     return (
         <div >
             <Navbar bg="light" expand="sm">
-            <Navbar.Brand style={{ fontSize: '24px', fontWeight: 'bolder'}} href="#"><img style={{marginRight:'10px'}} alt="" src="https://i.imgur.com/eFCHtTt.png" width="30" height="30"/>COFFEVENT</Navbar.Brand>
+            <Navbar.Brand style={{ fontSize: '24px', fontWeight: 'bolder'}} href="/home"><img style={{marginRight:'10px'}} alt="" src="https://i.imgur.com/eFCHtTt.png" width="30" height="30"/>COFFEVENT</Navbar.Brand>
             
     
-      <span className="AccountLabel">Account</span>
+      {/* <span className="AccountLabel">Account</span> */}
 
     
-      
+      <div id="accountLogo">
             <NavDropdown drop={'down'}  
                 title={
-                       <FaUserCircle style={{marginLeft:'7px', marginRight:'7px',color: "black"}} size={30} />
+                       <FaUserCircle style={{color:'black'}} size={30} />
                     } 
                 id="basic-nav-dropdown">
                     <NavDropdown.Item href="/Signin">My Profile</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">My Events</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>  
             </NavDropdown>
-        
+    </div>
 
-        <FaMapMarkedAlt size={30} style={{marginLeft:'-5px', marginRight:'5px'}} />
+        {/* <FaMapMarkedAlt size={30} style={{marginLeft:'-5px', marginRight:'5px'}} /> */}
             
                           <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -40,8 +40,9 @@ const Navigation = () => {
                             <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
                         </NavDropdown>
 
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#link">Link</Nav.Link>
+                        <Nav.Link href="/home">Home</Nav.Link>
+                        <Nav.Link href="/Events">Events</Nav.Link>
+                        <Nav.Link href="/Coffees">Places</Nav.Link>
                     </Nav>
 
                 </Navbar.Collapse> 
@@ -57,3 +58,8 @@ const Navigation = () => {
 }
 
 export default Navigation
+
+
+
+
+
