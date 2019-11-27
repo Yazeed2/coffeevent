@@ -2,7 +2,8 @@ const express = require('express')
 const router = express.Router()
 const CoffeeShops = require("../models/CoffeeShops")
 const Events = require('../models/Events')
-
+const Users = require('../models/User')
+const jwt = require('jsonwebtoken')
 
 // create event test
 
@@ -10,10 +11,10 @@ const Events = require('../models/Events')
 
 
 
-router.post ('/create', (req,res)=>{
+router.post('/create', (req,res)=>{
     Events.create(req.body)
-    .then(thing => res.send('created'))
-    .catch(err=> res.send(err))
+    .then(thing => res.json({msg:'created'}))
+    .catch(err=> res.json(err))
     // CoffeeShops.findOne({coffeeName: req.body.coffeeShop} )
     // .then(data => {
     //     let events = data.events
@@ -27,6 +28,43 @@ router.post ('/create', (req,res)=>{
     // .catch(err=>res.send(err))
 })
 
+router.post('/create/:token', (req,res)=>{
+   
+    
+    Events.create(req.body)
+    .then(thing => {
+
+        var decoded = jwt.verify(req.params.token, 'secret')
+        console.log(decoded);
+        
+        Users.findOne({_id: decoded._id})
+        .then((data) => {
+            
+            console.log('evenXts');
+            console.log('evXXents');
+        
+
+
+           
+            
+            Users.findByIdAndUpdate(decoded._id,{ $push : {createdEvents:'supp?'}})
+            .then(somethings=> {
+                console.log('dooonnene'); 
+                console.log(somethings); 
+
+                
+                res.send('somethings')
+            }
+                )
+            .catch(err => res.send(err))
+        })
+        .catch(err=>res.send(err))
+
+       })
+    .catch(err=> res.json(err))
+
+   
+})
 
 
 //create the coffee shop 

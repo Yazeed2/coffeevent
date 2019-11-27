@@ -3,7 +3,7 @@ import DatePicker from 'react-date-picker';
 import { Button,Row, Image, ButtonToolbar, Form, Col} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './CreateEvent.css'
-import Axios from 'axios';
+import axios from 'axios';
 
 
 export default class CreateEvent extends Component {
@@ -22,7 +22,13 @@ export default class CreateEvent extends Component {
       }
       
       postThis=()=>{
-        Axios.post('http://localhost:5100/events/create', {
+        var token = ''
+        if(localStorage.usertoken){
+           
+           var decoded = jwt.verify(localStorage.usertoken, 'secret')
+           token = decoded._id
+        }
+        axios.post('http://localhost:5100/events/create/'+token, {
           startingTime: this.state.staart,
           endingTime: this.state.ennd,
           typeOfEvent: this.state.typpe,
@@ -33,6 +39,8 @@ export default class CreateEvent extends Component {
           option:this.state.commennt,
           priOrpub: this.state.puuplic,
         })
+        .then(res=> console.log(res))
+        .catch(err=> console.log(err))
       }
 
      componentDidUpdate(){

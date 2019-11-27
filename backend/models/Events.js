@@ -5,11 +5,11 @@ const Event = new Schema(
   {
     startingTime: {
         type:String,
-    required:true
+    required:false
 },
  endingTime: {
      type:String,
-     required:true
+     required:false
  },
  photo: {
      type:String,
@@ -21,7 +21,7 @@ const Event = new Schema(
  },
  typeOfEvent:{
     type:String,
-required:true
+required:false
  },
  price:{
     type:String,
@@ -38,7 +38,7 @@ required:false
 
  name:{
     type:String,
-required:true
+required:false
  },
  coffeeShopName:{
     type:String,
@@ -46,23 +46,23 @@ required:false
  },
  capacity:{
      type:String,
-     required:true
+     required:false
  },
  date:{
      type:Date,
-     required:true
+     required:false
  },
  thingsEvent:{
      type:String,
-     required:true
+     required:false
  },
  options:{
      type:String,
-     required:true
+     required:false
  },
  priOrpub:{
      type:String,
-     required:true
+     required:false
  }
 
 
