@@ -1,61 +1,83 @@
 .pageTitle{
     text-align: center;
-    font-size: 46.55px;
+    /* font-size: 46.55px; */
 }
 
 @media only screen and (max-width: 930px){
     .pageTitle{
-        font-size:5vw;
+        /* font-size:5vw; */
     }
 }
-/* @media only screen and (min-width: 930px){
-
-} */
 
 .pageDiv{
     width: 90%;
     margin-left: 3%;
     margin-right: 5%;
 }
-/* @media only screen and (max-width: 1000px){
-    #CarouselEvent{
-        height: 35vh;
+/* @media only screen and (max-width: 500px){
+    
+    .pageTitle{
+        font-size: 4vw;
     }
-    #CarouselImg{
-        height: 35vh;
+    .EventCapacity{
+        font-size: 3vw;
     }
     
-}
-@media only screen and (min-width: 1000px) and (max-width: 1250px){
-    #CarouselImg{
-        height: 50vh;
-        width: 100vw;
-    }
-    
-    #CarouselEvent{
-        height: 50vh;
-        width: 100vw;
-    }
-}
-@media only screen and (min-width: 1250px) and (max-width: 1450px){
-    #CarouselImg{
-        height: 60vh;
-        width: 100vw;
-    }
-    
-    #CarouselEvent{
-        height: 60vh;
-        width: 100vw;
-    }
-}
-@media only screen and (min-width: 1450px){
-    #CarouselImg{
-        height: 70vh;
-        width: 100vw;
-    }
-    
-    #CarouselEvent{
-        height: 70vh;
-        width: 100vw;
-    }
 } */
+
+
+
+
+
+@media only screen and (max-width: 800px){
+
+    .pageTitle{
+        font-size: 35px;
+    }
+    .EventTitle{
+        font-size: 25px;
+        font-weight: 600;
+    }
+    .EventCapacity{
+        font-size: 3vw;
+    }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1100px){
+    .pageTitle{
+        font-size: 40px;
+    }
+    .EventTitle{
+        font-size: 30px;
+        font-weight: 600;
+    }
+    .EventCapacity{
+        font-size: 3vw;
+    }
+}
+
+@media only screen and (min-width: 1100px) and (max-width: 1300px){
+    .pageTitle{
+        font-size: 45px;
+    }
+    .EventTitle{
+        font-size: 40px;
+        font-weight: 600;
+    }
+    .EventCapacity{
+        font-size: 3vw;
+    }
+}
+
+@media only screen and (min-width: 1300px){
+    .pageTitle{
+        font-size: 50px;
+    }
+    .EventTitle{
+        font-size: 45px;
+        font-weight: 600;
+    }
+    .EventCapacity{
+        font-size: 3vw;
+    }
+}
