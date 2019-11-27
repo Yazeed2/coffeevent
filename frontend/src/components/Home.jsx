@@ -9,14 +9,14 @@ export default class Home extends Component {
     showAll: true,
     hideThem: false,
     data: data1,
-    district: null,
-    intrest:null,
-    date:null,
-    timeFrom: null,
-    timeuntill: null,
-    cost: null
+    district: "",
+    intrest:"",
+    date:"",
+    timeFrom: "",
+    timeuntill: "",
+    cost: ""
   }
-
+// axios.get('/:')
   componentDidUpdate(){
     console.log(this.state.district)
     console.log(this.state.intrest)
@@ -25,7 +25,7 @@ export default class Home extends Component {
     console.log(this.state.timeuntill)
     console.log(this.state.cost)
   }
-  
+  // user.find('dheoj')
     render() {
         return (
             <div>
@@ -164,27 +164,3 @@ export default class Home extends Component {
 
 
 
-
-
-
-
-// .App1 {
-//     text-align: center;
-//   }
-  
-//   .buttonSearch {
-//     background-color: rgb(242, 237, 88);
-//     width: 20vh;
-//     border: 0;
-//     padding: 10px 0;
-//     margin: 5px 0;
-//     text-align: center;
-//     color: rgb(0, 0, 0);
-//     border-radius: 12px;
-//   }
-
-
-//   function filter(sel) {
-//     var xe = sel.options[sel.selectedIndex].text
-//       console.log(xe)
-//     }
