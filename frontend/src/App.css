@@ -107,8 +107,7 @@ body{
   }
 
   #Card-Margin{
-    margin-left: auto;
-    margin-right: auto;
+    width: 250px;
   }
 
 }
@@ -233,3 +232,21 @@ body{
   background: url(https://i.imgur.com/vhhhiyl.png) 96% / 10% no-repeat #eee;
 }
 
+
+@media only screen and (min-width:991px ) and (max-width:1329px){
+
+  #Card-Margin{
+    margin-left: 5%;
+    
+  }
+
+}
+
+@media only screen and (min-width:768px ) and (max-width:877px){
+
+  #Card-Margin{
+    margin-left: 3%;
+    
+  }
+
+}

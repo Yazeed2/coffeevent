@@ -4,6 +4,7 @@ import { Button,Row, Image, ButtonToolbar, Form, Col} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './CreateEvent.css'
 import axios from 'axios';
+import jwt from 'jsonwebtoken'
 
 
 export default class CreateEvent extends Component {
@@ -71,13 +72,13 @@ export default class CreateEvent extends Component {
                 <Form.Label >Event Title</Form.Label>
                 <br />
        <Form.Control onChange={(e)=>{this.setState({titlee:e.target.value})}}
-       type="text" placeholder="Enter event title" name="eventTitle" />
+       type="text" placeholder="Enter Event Title" name="eventTitle" />
                 </Form.Group>
               </Form.Row>
             {/* </Form> */}
             <Form.Group onChange={(e)=>{this.setState({typpe:e.target.value})}}
              as={Col} controlId="formGridState">
-       <Form.Label >Eevent Type</Form.Label>
+       <Form.Label >Event Type</Form.Label>
        <br />
        
        <Form.Control  as="select">
@@ -101,7 +102,7 @@ export default class CreateEvent extends Component {
      <Form.Group as={Col} controlId="formGridState">
        <Form.Label >Date</Form.Label>
        </Form.Group>
-     <DatePicker
+     <DatePicker 
           onChange={this.onChange}
            value={this.state.date}
          /> 
@@ -162,10 +163,13 @@ variant="outline-secondary">Cables</Button>
 <h5>Any other comments or things you need ?</h5>
 <Form.Control onChange={(e)=>{this.setState({commennt:e.target.value})}}
 type="email" placeholder= "" />
+<br/>
 <ButtonToolbar>
-<Button style={{backgroundColor:'#F2D25C'}} variant="outline-secondary" onClick={this.postThis}>Choose Venue</Button>
+<Button block style={{backgroundColor:'#F2D25C', width:'300px', marginLeft:'auto', marginRight:'auto'}} variant="outline-secondary" onClick={this.postThis}>Choose Venue</Button>
 </ButtonToolbar>
+
 </Form>
+<br/><br/><br/>
             </div>
         )
     }

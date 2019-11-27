@@ -4,7 +4,7 @@ import {Card} from 'react-bootstrap'
 
 const HomePage = () => {
     return (
-    <div className="col-lg-2 col-md-3 col-sm-6 mb-2" id="Card-Margin" style={{width: 'auto',}}>
+    <div className="col-lg-2 col-md-3 col-sm-6 mb-2" id="Card-Margin">
         <Card style={{ width: '170px', border: 'none', marginTop: '60px' ,marginLeft:'auto', marginRight:'auto', display:'block'}}>
         <Card.Img id="Card-Image-home" variant="top" src="https://i.imgur.com/PU5Zex0.jpg"/>
         <Card.Body class="text-left" style={{width: '147px', height: '50px', margin: '0 auto'}}>

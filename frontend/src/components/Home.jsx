@@ -7,9 +7,12 @@ import data1 from '../Tempdata'
 
 export default class Home extends Component {
   state = {
-    arry: [1, 2, 3, 4],
+    arry: [1, 2, 3, 4, 5],
+    arry2: [1, 2, 3, 4, 5],
     showAll: true,
     hideThem: false,
+    showscnd:true,
+    hidescnd:false,
     data: data1,
     district: "",
     intrest:"",
@@ -156,9 +159,38 @@ export default class Home extends Component {
           : null}
         {this.state.hideThem ?
           <div style={{ textAlign: 'center' }}>
-            <Button className="ShowHideButton" onClick={() => { this.setState({ arry: [1, 2, 3, 4], showAll: true, hideThem: false }) }}>Hide</Button>
+            <Button className="ShowHideButton" onClick={() => { this.setState({ arry: [1, 2, 3, 4,5], showAll: true, hideThem: false }) }}>Hide</Button>
           </div>
           : null}
+<br/>
+<h1 className="Section-Title">TOP ORGANISERS' EVENTS</h1>
+
+<Row>
+          {this.state.arry2.map(() => {
+            return <HomePage />
+          })}
+        </Row>
+        {this.state.showscnd ?
+          <div style={{ textAlign: 'center' }}>
+            <Button className="ShowHideButton" onClick={() => { this.setState({ arry2: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], showscnd: false, hidescnd: true }) }}>Show all</Button>
+          </div>
+          : null}
+        {this.state.hidescnd?
+          <div style={{ textAlign: 'center' }}>
+            <Button className="ShowHideButton" onClick={() => { this.setState({ arry2: [1, 2, 3, 4,5], showscnd: true, hidescnd: false }) }}>Hide</Button>
+          </div>
+          : null}
+<br/>
+<h1 className="Section-Title">TOP COFFEE SHOP EXPERIENCES</h1>
+
+<Row>
+          {this.state.arry.map(() => {
+            return <HomePage />
+          })}
+        </Row>
+
+        <br/><br/><br/><br/><br/><br/>
+        
             </div>
         )
     }

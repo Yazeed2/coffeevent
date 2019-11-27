@@ -91,7 +91,7 @@ export default class AllEvents extends Component {
                                             })}
                                         </Row>
                                         <br /><br /><br />
-                                        <Button href="#topOfPage" block style={{ width: '40%', margin: '10% auto 20% auto' }} variant="outline-secondary">Go Back</Button>
+                                        <Button href="/" block style={{ width: '300px', margin: '10% auto 20% auto' }} variant="outline-secondary">Go Back</Button>
                                     </div>
                                 </div>
 

@@ -73,10 +73,11 @@ localStorage.setItem('usertoken' , res.data)
           <Form.Group controlId="formBasicCheckbox">
             <Form.Check type="checkbox" label="Check me out" />
           </Form.Group>
-          <Button variant="primary" type="submit">
+          <Button style={{marginBottom:'300%'}} variant="primary" type="submit">
             Submit
           </Button>
         </Form>
+        
         </div>
         </>
         )

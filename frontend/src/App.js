@@ -24,6 +24,7 @@ import Signin from './components/sign/Signin'
 import Home from './components/Home'
 import ChangePassword from './components/ChangePassword/ChangePassword'
 import Axios from 'axios';
+import ErrorPath from './components/ErrorPath'
 
 
 export default class App extends Component {
@@ -106,11 +107,14 @@ console.log('i am idiot');
             <Route path="/SignIn" component={Signin} />
             <Route path="/ChangePass" component={ChangePassword} />
 
+            <Route path="/error" component={ErrorPath}/>
+            
             <Route path="/" component={Home} />
 
 
-
+            
           </Switch>
+
         </BrowserRouter>
 
 
