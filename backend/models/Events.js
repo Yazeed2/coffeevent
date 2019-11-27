@@ -63,7 +63,12 @@ required:false
  priOrpub:{
      type:String,
      required:false
- }
+ },
+  userId:{
+    type:String,
+    required:false
+}
+
 
 
 },

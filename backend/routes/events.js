@@ -13,7 +13,7 @@ const jwt = require('jsonwebtoken')
 
 router.post('/create', (req,res)=>{
     Events.create(req.body)
-    .then(thing => res.json({msg:'created'}))
+    .then(thing => res.json({msg:req.body}))
     .catch(err=> res.json(err))
     // CoffeeShops.findOne({coffeeName: req.body.coffeeShop} )
     // .then(data => {
@@ -28,43 +28,33 @@ router.post('/create', (req,res)=>{
     // .catch(err=>res.send(err))
 })
 
-router.post('/create/:token', (req,res)=>{
-   
-    
-    Events.create(req.body)
-    .then(thing => {
-
-        var decoded = jwt.verify(req.params.token, 'secret')
-        console.log(decoded);
-        
-        Users.findOne({_id: decoded._id})
-        .then((data) => {
-            
-            console.log('evenXts');
-            console.log('evXXents');
-        
 
 
-           
-            
-            Users.findByIdAndUpdate(decoded._id,{ $push : {createdEvents:'supp?'}})
-            .then(somethings=> {
-                console.log('dooonnene'); 
-                console.log(somethings); 
-
-                
-                res.send('somethings')
-            }
-                )
-            .catch(err => res.send(err))
-        })
-        .catch(err=>res.send(err))
-
-       })
-    .catch(err=> res.json(err))
+//      amz7
+// router.post('/create/:token', (req,res)=>{ 
+//     Events.create(req.body)
+//     .then(thing => {
+//         var decoded = jwt.verify(req.params.token, 'secret')
+//         console.log(decoded);       
+//         Users.findOne({_id: decoded._id})
+//         .then((data) => {           
+//             console.log('evenXts');
+//             console.log('evXXents');           
+//             Users.findByIdAndUpdate(decoded._id,{ $push : {createdEvents:'supp?'}})
+//             .then(somethings=> {
+//                 console.log('dooonnene'); 
+//                 console.log(somethings);               
+//                 res.send('somethings')
+//             }
+//                 )
+//             .catch(err => res.send(err))
+//         })
+//         .catch(err=>res.send(err))
+//        })
+//     .catch(err=> res.json(err))
 
    
-})
+// })
 
 
 //create the coffee shop 
@@ -99,6 +89,12 @@ router.get('private/:id',(req, res)=>{
 //gets all the data
 router.get('/',(req, res)=>{
     Events.find()
+    .then(data => res.send(data))
+    .catch(err => res.send(err))
+})
+
+router.post('/change/:id', (req, res)=>{
+    Events.findByIdAndUpdate(req.params.id , req.body)
     .then(data => res.send(data))
     .catch(err => res.send(err))
 })

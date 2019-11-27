@@ -4,6 +4,7 @@ import { Button,Row, Image, ButtonToolbar, Form, Col} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './CreateEvent.css'
 import axios from 'axios';
+import jwt from 'jsonwebtoken'
 
 
 export default class CreateEvent extends Component {
@@ -26,9 +27,14 @@ export default class CreateEvent extends Component {
         if(localStorage.usertoken){
            
            var decoded = jwt.verify(localStorage.usertoken, 'secret')
-           token = decoded._id
+          console.log(decoded);
+        token = decoded.user._id
+        console.log(token);
+        
+
+          
         }
-        axios.post('http://localhost:5100/events/create/'+token, {
+        axios.post('http://localhost:5100/events/create/', {
           startingTime: this.state.staart,
           endingTime: this.state.ennd,
           typeOfEvent: this.state.typpe,
@@ -38,9 +44,12 @@ export default class CreateEvent extends Component {
           thingsEvent: this.state.chosse,
           option:this.state.commennt,
           priOrpub: this.state.puuplic,
+          userId: token
         })
         .then(res=> console.log(res))
         .catch(err=> console.log(err))
+        console.log(token);
+        
       }
 
      componentDidUpdate(){

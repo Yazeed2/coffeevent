@@ -24,6 +24,7 @@ import Signin from './components/sign/Signin'
 import Home from './components/Home'
 import ChangePassword from './components/ChangePassword/ChangePassword'
 import Axios from 'axios';
+import Profile from './components/profile/Pofile';
 
 
 export default class App extends Component {
@@ -72,8 +73,7 @@ console.log('i am idiot');
 
 
                 id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">My Profile</NavDropdown.Item>
-                <NavDropdown.Item href="">My Events</NavDropdown.Item>
+                <NavDropdown.Item href="/Profile">My Profile</NavDropdown.Item>  
                 <NavDropdown.Item href="/ChangePass">Change Password</NavDropdown.Item>
                 <NavDropdown.Item onClick={this.logout}>Logout</NavDropdown.Item>
 
@@ -105,6 +105,7 @@ console.log('i am idiot');
             <Route path="/Register" component={createAcc}/>
             <Route path="/SignIn" component={Signin} />
             <Route path="/ChangePass" component={ChangePassword} />
+            <Route path="/Profile" component={Profile} />
 
             <Route path="/" component={Home} />
 
