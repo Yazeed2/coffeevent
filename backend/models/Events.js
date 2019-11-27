@@ -34,7 +34,19 @@ required:true
  accepted:{
     type:Boolean,
 required:true
- }},
+ },
+
+ name:{
+    type:String,
+required:true
+ },
+ coffeeShopName:{
+    type:String,
+required:true
+ }
+
+
+},
  
 
   { timestamps: true }

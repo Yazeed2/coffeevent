@@ -19,7 +19,8 @@ margin-top: 1%
     font-size: 3vw;
 }
 
-@media only screen and (max-width: 1000px){
+/*
+ @media only screen and (max-width: 1000px){
     #CarouselEvent{
         height: 35vh;
     }
@@ -62,5 +63,5 @@ margin-top: 1%
         width: 100vw;
 
     }
-}
+} */
 

@@ -1,6 +1,6 @@
-
-const data1 = 
-[
+const axios = require('axios')
+let data1 = 
+ [
      {
          "coffeeName":'brew92',
          "startingTime": "3:30 pm",
@@ -78,11 +78,21 @@ const data1 =
  
   ]
 
-const result = data1.filter(word => {
+// const result = data1.filter(word => {
 
-return word['coffeeName'] == 'brew92'
-})
-console.log(result);
+// return word['coffeeName'] == 'brew92'
+// // })
+// console.log(result);
+
+
+// *******************************************
+
+// axios.get('localhost:5100/events/').then(
+//     data => data1 = data 
+// )
+// .catch(err=> console.log(err))
+
+// *******************************************
 
 
 module.exports=data1

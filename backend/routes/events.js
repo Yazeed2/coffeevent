@@ -4,7 +4,12 @@ const CoffeeShops = require("../models/CoffeeShops")
 const Events = require('../models/Events')
 
 
-// create event 
+// create event test
+
+
+
+
+
 router.post ('/create', (req,res)=>{
     Events.create(req.body)
     .then(thing => res.send('created'))
@@ -47,7 +52,7 @@ router.post('/coffeShop', (req, res)=>{
 // find event by id
 //it does not wrok for know 
 router.get('private/:id',(req, res)=>{
-    Events.find({_id:req.params.id})
+    Events.findById({_id:req.params.id})
     .then(data => res.send(data))
     .catch(err => res.send(err))
 })
