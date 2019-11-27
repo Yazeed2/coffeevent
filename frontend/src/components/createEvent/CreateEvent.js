@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import DatePicker from 'react-date-picker';
 import { Button,Row, Image, ButtonToolbar, Form, Col} from 'react-bootstrap'
-// import { Route, BrowserRouter, Switch, Link } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './CreateEvent.css'
 
 
 export default class CreateEvent extends Component {
@@ -13,21 +14,22 @@ export default class CreateEvent extends Component {
       onChange = date => this.setState({ date })
     render() {
         return (
-            <div>
+            <div className="formEvent">
                  <br></br>
           <br></br>
             <h1>Create an Event</h1>
-            <Form>
+          
+            <Form >
               <Form.Row>
                 <Form.Group as={Col}controlId="formGrid">
-                <Form.Label>Event Title</Form.Label>
+                <Form.Label >Event Title</Form.Label>
                 <br />
        <Form.Control type="email" placeholder="" />
                 </Form.Group>
               </Form.Row>
-            </Form>
+            {/* </Form> */}
             <Form.Group as={Col} controlId="formGridState">
-       <Form.Label>Eevent Type</Form.Label>
+       <Form.Label >Eevent Type</Form.Label>
        <br />
        <Form.Control as="select">
          <option>Art&Design</option>
@@ -35,7 +37,7 @@ export default class CreateEvent extends Component {
        </Form.Control>
      </Form.Group>
      <Form.Group as={Col} controlId="formGridState">
-       <Form.Label>Capacity</Form.Label>
+       <Form.Label >Capacity</Form.Label>
        <br />
        <Form.Control as="select">
          <option>100</option>
@@ -44,13 +46,15 @@ export default class CreateEvent extends Component {
        </Form.Control>
      </Form.Group>
      <Form.Group as={Col} controlId="formGridState">
-       <Form.Label>Date</Form.Label>
+       <Form.Label >Date</Form.Label>
        </Form.Group>
      <DatePicker
           onChange={this.onChange}
            value={this.state.date}
          /> 
+         <br />
           <Form.Group as={Col} controlId="formGridState">
+            <br />
        <Form.Label>Start Time</Form.Label>
        <br />
        <Form.Control as="select">          
@@ -68,15 +72,19 @@ export default class CreateEvent extends Component {
          <option></option>
        </Form.Control>
      </Form.Group>
-     <h3>Is your event public or private?</h3>
-     <Button variant="primary" type="submit">
-    Public
+     <h5>Is your event public or private?</h5>
+     {/* <Button variant="primary" type="submit">
+    Public 
   </Button> 
    <Button variant="primary" type="submit">
     Private
-  </Button>
+  </Button> */}
+  <ButtonToolbar>
+<Button variant="outline-secondary">Public</Button>
+<Button variant="outline-secondary">Private</Button>
+</ButtonToolbar>
   <br />
-  <h3>Things you need for your event...</h3>
+  <h5>Things you need for your event...</h5>
 <ButtonToolbar>
 <Button variant="outline-secondary">Beverages</Button>
 <Button variant="outline-secondary">Food</Button>
@@ -86,12 +94,15 @@ export default class CreateEvent extends Component {
 <Button variant="outline-secondary">Speakers</Button>
 </ButtonToolbar>
 <br />
-<h3>Any other comments or things you need ?</h3>
+<h5>Any other comments or things you need ?</h5>
 <Form.Control type="email" placeholder= "" />
 <ButtonToolbar>
-<Button variant="outline-secondary">Choose Venue</Button>
+<Button style={{backgroundColor:'#F2D25C'}} variant="outline-secondary">Choose Venue</Button>
 </ButtonToolbar>
+</Form>
             </div>
         )
     }
 }
+
+// style={{backgroundColor:'#F5F7F7',position:'absolute',width:'237px',height:'31px'}} 

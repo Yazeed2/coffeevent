@@ -3,6 +3,8 @@ import { Row, Button, Jumbotron, Container, Carousel } from 'react-bootstrap'
 import HomePage from './HomePage'
 import Search from './Search/Search'
 import data1 from '../Tempdata'
+
+
 export default class Home extends Component {
   state = {
     arry: [1, 2, 3, 4],
@@ -16,6 +18,7 @@ export default class Home extends Component {
     timeuntill: "",
     cost: ""
   }
+
 // axios.get('/:')
   componentDidUpdate(){
     console.log(this.state.district)
@@ -26,6 +29,7 @@ export default class Home extends Component {
     console.log(this.state.cost)
   }
   // user.find('dheoj')
+
     render() {
         return (
             <div>

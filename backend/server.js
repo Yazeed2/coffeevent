@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv/config");
 const events  = require('./routes/events')
 const cors = require('cors')
+
 const user = require('./routes/user')
 const admin = require('./routes/admin')
 
@@ -13,6 +14,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(cors())
 
+app.use('/auth', auth)
 app.use('/events', events)
 
 

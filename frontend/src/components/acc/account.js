@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { Navbar, Button, FormControl, Container, Row, Image, Col, Form } from 'react-bootstrap'
-import Singin from '../sign/Signin'
+import { Navbar, Button } from 'react-bootstrap'
 
 export default class account extends Component {
     render() {
