@@ -17,21 +17,21 @@ const adminBro = new AdminBro({
     logo: 'https://i.imgur.com/eFCHtTt.png',
     companyName: 'Unicorn'
   },
-  resources: [{
-    resource: "database section name",
-    options:{
-      parent:{
-        name: 'Admin Content',
-        icon: 'fas fa-cogs',
-      },
-      properties:{
-        description:{
-          type: 'richtext',
-        },
+  // resources: [{
+  //   resource: "database section name",
+  //   options:{
+  //     parent:{
+  //       name: 'Admin Content',
+  //       icon: 'fas fa-cogs',
+  //     },
+  //     properties:{
+  //       description:{
+  //         type: 'richtext',
+  //       },
         
-      },
-    },
-  }],
+  //     },
+  //   },
+  // }],
 })
 
 const ADMIN = {
