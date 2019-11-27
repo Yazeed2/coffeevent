@@ -17,10 +17,7 @@ const userSchema = new Schema({
         type: String
 
     },
-    isLogedIn: {
-        type: Boolean,
-        default: false
-    }
+createdEvents:[]
 }, {
     timestamps: true
 })

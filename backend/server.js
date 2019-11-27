@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(cors())
 
-// app.use('/auth', auth)
+
 app.use('/events', events)
 
 
