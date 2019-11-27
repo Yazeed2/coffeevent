@@ -59,18 +59,18 @@ router.post('/login', (req, res) => {
                         user
                     }
                     let token = jwt.sign(paylod, 'secret', {
-                        expiresIn: 1440
+                        expiresIn: 60*60*24*365
                     })
                     res.send(token)
                 }
                 // if password not the same
                 else {
-                    res.send("Password is not currect")
+                    res.json({msg :"Password is not currect"})
                 }
             } else {
                 // if email not exist
                 console.log("yess")
-                res.send("email is not found")
+                res.json({msg:"email is not found"})
             }
         })
         .catch(err => res.send(err))
@@ -78,7 +78,7 @@ router.post('/login', (req, res) => {
 
 // change the passwoer 
 
-router.put('/changepassword/:token' , (req , res)=>{
+router.post('/changepassword/:token' , (req , res)=>{
     
 // newPassword
 
@@ -94,7 +94,7 @@ router.put('/changepassword/:token' , (req , res)=>{
 })
 // get all user 
 
-router.get('/nouf' , (req , res)=>{
+router.get('/alluser' , (req , res)=>{
 
     User.find()
     .then(users => res.json(users))

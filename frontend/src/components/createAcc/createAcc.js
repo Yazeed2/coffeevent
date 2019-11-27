@@ -13,7 +13,7 @@ export default class createAcc extends Component {
   }
   submit = (e)=>{
     e.preventDefault()
-  axios.post('هنا اللينك حق تسجيل الدخول' , this.state)
+  axios.post('http://localhost:5100/users/register', this.state)
   .then(res =>
      console.log(res))
   .catch(err => console.log(err))
