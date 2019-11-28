@@ -16,6 +16,8 @@ const userSchema = new Schema({
         required: true,
         type: String
 
+    },number:{
+        type:Number,
     },
 createdEvents:[]
 }, {

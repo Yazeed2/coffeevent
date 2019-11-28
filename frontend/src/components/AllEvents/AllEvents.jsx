@@ -49,19 +49,19 @@ bookIt=()=>{
 
 
 
-    //     componentDidMount(){
-    //         axios.get('http://localhost:5100/events/')
-    //         .then(data=>{
-    //             this.setState({
-    //                 data:data.data
-    //             })
-    // console.log('herer');
+        componentDidMount(){
+            axios.get('http://localhost:5100/events/')
+            .then(data=>{
+                this.setState({
+                    data:data.data
+                })
+    console.log('herer');
 
 
-    //         })
-    //         .catch(err=> console.log(err)
-    //         )
-    //     }
+            })
+            .catch(err=> console.log(err)
+            )
+        }
     //cehck
     render() {
         // console.log(this.props.location.state.titlee);
@@ -100,7 +100,7 @@ bookIt=()=>{
 
                                                           
                                                             <Card.Body class="text-left" style={{ width: '147px', height: '50px', margin: '0 auto' }}>
-                                                                <Card.Title style={{ fontSize: '16px', textAlign: 'left', marginTop: '7px' }}>{data.coffeeName}</Card.Title>
+                                                                <Card.Title style={{ fontSize: '16px', textAlign: 'left', marginTop: '7px' }}>{data.name}</Card.Title>
                                                                 <Card.Text style={{ fontSize: '13px' }}>
                                                                     {data.description}
                                                                     Starting Time: {data.startingTime}

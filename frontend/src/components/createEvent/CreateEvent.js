@@ -46,7 +46,10 @@ export default class CreateEvent extends Component {
           priOrpub: this.state.puuplic,
           userId: token
         })
-        .then(res=> console.log(res))
+        .then(res=> {
+        this.props.history.push('/home')
+          
+          console.log(res)})
         .catch(err=> console.log(err))
         console.log(token);
         

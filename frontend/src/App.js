@@ -24,7 +24,7 @@ import Signin from './components/sign/Signin'
 import Home from './components/Home'
 import ChangePassword from './components/ChangePassword/ChangePassword'
 import Axios from 'axios';
-
+import ErrorPath from './components/ErrorPath'
 import Profile from './components/profile/Pofile';
 
 
@@ -121,10 +121,12 @@ console.log('i am idiot');
             <Route path="/SignIn" render ={()=> <Signin isLogin={this.isLogin} />} />
             <Route path="/ChangePass" component={ChangePassword} />
             <Route path="/Profile" component={Profile} />
+            <Route path="/eee" component={ErrorPath} />
 
-            <Route path="/error" component={ErrorPath}/>
+ 
             
             <Route path="/" component={Home} />
+
 
 
             

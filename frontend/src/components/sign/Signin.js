@@ -54,7 +54,7 @@ this.props.isLogin()
  
 <SweetAlert
         show={this.state.show}
-        title="Demo"
+        title="Logged In!"
         text="nice you have been login "
         onConfirm={() => {
           this.setState({ show: false })
