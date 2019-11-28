@@ -24,7 +24,9 @@ import Signin from './components/sign/Signin'
 import Home from './components/Home'
 import ChangePassword from './components/ChangePassword/ChangePassword'
 import Axios from 'axios';
+
 import Profile from './components/profile/Pofile';
+
 
 
 export default class App extends Component {
@@ -73,6 +75,7 @@ console.log('i am idiot');
 
         <BrowserRouter>
           <Navbar bg="light" expand="sm">
+
             <Navbar.Brand style={{ fontSize: '24px', fontWeight: 'bolder' }} href="#"><img style={{ marginRight: '10px' }} alt="" src="https://i.imgur.com/eFCHtTt.png" width="30" height="30" />COFFEVENT</Navbar.Brand>
             {this.state.isLogin || this.state.token !== null?
 
@@ -98,10 +101,11 @@ console.log('i am idiot');
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ml-auto">
 
-
+                
                 <Nav.Link href="/AllEvents" >All Events</Nav.Link>
                 <Nav.Link href="/CoffeeShops">Coffee Shops</Nav.Link>
                 <Nav.Link href="/CreateEvent">Create Event</Nav.Link>
+                
 
               </Nav>
 
@@ -118,11 +122,14 @@ console.log('i am idiot');
             <Route path="/ChangePass" component={ChangePassword} />
             <Route path="/Profile" component={Profile} />
 
+            <Route path="/error" component={ErrorPath}/>
+            
             <Route path="/" component={Home} />
 
 
-
+            
           </Switch>
+
         </BrowserRouter>
 
 

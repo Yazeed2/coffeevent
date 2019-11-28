@@ -33,12 +33,15 @@
 
     .pageTitle{
         font-size: 35px;
+        font-family: 'Alatsi', sans-serif;
     }
     .EventTitle{
         font-size: 25px;
         font-weight: 600;
+        font-family: 'Alatsi', sans-serif;
     }
     .EventCapacity{
+        font-family: 'Alatsi', sans-serif;
         font-size: 3vw;
     }
 }
@@ -46,6 +49,7 @@
 @media only screen and (min-width: 800px) and (max-width: 1100px){
     .pageTitle{
         font-size: 40px;
+        font-family: 'Alatsi', sans-serif;
     }
     .EventTitle{
         font-size: 30px;
@@ -59,12 +63,15 @@
 @media only screen and (min-width: 1100px) and (max-width: 1300px){
     .pageTitle{
         font-size: 45px;
+        font-family: 'Alatsi', sans-serif;
     }
     .EventTitle{
+        font-family: 'Alatsi', sans-serif;
         font-size: 40px;
         font-weight: 600;
     }
     .EventCapacity{
+        font-family: 'Alatsi', sans-serif;
         font-size: 3vw;
     }
 }
@@ -72,12 +79,15 @@
 @media only screen and (min-width: 1300px){
     .pageTitle{
         font-size: 50px;
+        font-family: 'Alatsi', sans-serif;
     }
     .EventTitle{
         font-size: 45px;
         font-weight: 600;
+        font-family: 'Alatsi', sans-serif;
     }
     .EventCapacity{
         font-size: 3vw;
+        font-family: 'Alatsi', sans-serif;
     }
 }

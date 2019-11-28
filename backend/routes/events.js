@@ -73,6 +73,11 @@ router.post('/coffeShop', (req, res)=>{
 
 
 })
+router.get('/coffeShop', (req, res)=>{
+    CoffeeShops.find()
+    .then(data => res.send(data))
+    .catch(err=>res.send(err))
+})
 
 
 

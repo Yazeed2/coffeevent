@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button, InputGroup, FormControl } from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 
 const Search = () => {
     return (
@@ -8,7 +9,7 @@ const Search = () => {
             <InputGroup className="mb-3">
                 <FormControl placeholder="Search for an Event ..." type="text" name="searchValue"/>
                 <InputGroup.Append>
-                    <Button variant="outline-primary">Search Now!</Button>
+                <Link to={{ pathname: `/AllEvents`}}><Button variant="outline-primary">Search Now!</Button></Link>
                 </InputGroup.Append>
             </InputGroup>
         </form>

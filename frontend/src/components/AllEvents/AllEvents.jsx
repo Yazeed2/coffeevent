@@ -24,6 +24,7 @@ export default class AllEvents extends Component {
         showBook: false,
         hideBook: true,
         showPay: false,
+        showEnd:false,
         ticketsNumber: 1,
         totalPrice: 200,
         eventData: ''
@@ -63,10 +64,15 @@ bookIt=()=>{
     //     }
     //cehck
     render() {
+        // console.log(this.props.location.state.titlee);
+        
         return (
 
             <div>
                 <a id="topOfPage"></a>
+
+                
+
                 {this.state.ticketsNumber == 0 ? this.setState({ ticketsNumber: 1 }) : null}
                 {this.state.totalPrice < 200 ? this.setState({ totalPrice: 200 }) : null}
                 {this.state.totalPrice == 400 ? null : this.state.ticketsNumber == 2 ? this.setState({ totalPrice: 400 }) : null}
@@ -89,7 +95,10 @@ bookIt=()=>{
                                                 return (
                                                     <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12 mb-2" id="Card-Margin" style={{ width: 'auto', }}>
                                                         <Card style={{ width: '170px', border: 'none', marginTop: '60px', marginLeft: 'auto', marginRight: 'auto', display: 'block' }}>
+
                                                             <Card.Img href="#topOfPage" onClick={() => { this.setState({ showEvent: true, showAll: false, coffeeName: data.coffeeName, startingTime: data.startingTime, endingTime: data.endingTime, eventData:data}) }} id="Card-Image-home" variant="top" src="https://i.imgur.com/PU5Zex0.jpg" />
+
+                                                          
                                                             <Card.Body class="text-left" style={{ width: '147px', height: '50px', margin: '0 auto' }}>
                                                                 <Card.Title style={{ fontSize: '16px', textAlign: 'left', marginTop: '7px' }}>{data.coffeeName}</Card.Title>
                                                                 <Card.Text style={{ fontSize: '13px' }}>
@@ -106,7 +115,7 @@ bookIt=()=>{
                                             })}
                                         </Row>
                                         <br /><br /><br />
-                                        <Button href="#topOfPage" block style={{ width: '40%', margin: '10% auto 20% auto' }} variant="outline-secondary">Go Back</Button>
+                                        <Button href="/" block style={{ width: '300px', margin: '10% auto 20% auto' }} variant="outline-secondary">Go Back</Button>
                                     </div>
                                 </div>
 
@@ -126,8 +135,7 @@ bookIt=()=>{
                                         id="CarouselImg"
                                     />
                                     <Carousel.Caption>
-                                        <h3>First slide label</h3>
-                                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                        
                                     </Carousel.Caption>
                                 </Carousel.Item>
                                 <Carousel.Item id="CarouselEvent">
@@ -139,8 +147,7 @@ bookIt=()=>{
                                     />
 
                                     <Carousel.Caption>
-                                        <h3>Second slide label</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                      
                                     </Carousel.Caption>
                                 </Carousel.Item>
                                 <Carousel.Item id="CarouselEvent">
@@ -152,8 +159,7 @@ bookIt=()=>{
                                     />
 
                                     <Carousel.Caption>
-                                        <h3>Third slide label</h3>
-                                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                                        
                                     </Carousel.Caption>
                                 </Carousel.Item>
                             </Carousel>
@@ -166,7 +172,7 @@ bookIt=()=>{
                         <div>
                             <h2 style={{ display: 'inline-block', marginLeft: '15%', fontSize: '3vw', marginTop: '4%' }}><MdLocationOn style={{ marginLeft: '-50px' }} />           Location</h2>
                             <h2 style={{ display: 'inline-block', float: 'right', marginRight: '8%', fontSize: '3vw' }}>200 SAR</h2>
-                            <p style={{ marginLeft: '15.5%', marginTop: '2%', fontSize: '2vw', fontWeight: 'bold' }}>Link:</p>
+                            <p style={{ marginLeft: '15.5%', marginTop: '2%', fontSize: '2vw', fontWeight: 'bold' }}>GoogleMaps:<a href="/">link</a></p>
                             <p style={{ marginLeft: '15.5%', marginTop: '-1%', fontSize: '2vw', fontWeight: 'bold' }}>startingTime: {this.state.startingTime}</p>
                         </div>
                         <br />
@@ -205,7 +211,7 @@ bookIt=()=>{
                             <Button href="#topOfPage" onClick={() => { this.setState({ showPay: true, showBook: false, showEvent: false, showAll: false, coffeeName: "", startingTime: "", endingTime: "" }) }} style={{ width: '300px' }} variant={"secondary"}>Payment</Button>
                             <br />
                             <Button href="#topOfPage" onClick={() => { this.setState({ showBook: false, showEvent: false, showAll: true, coffeeName: "", startingTime: "", endingTime: "" }) }} style={{ marginTop: '20px' }} variant="outline-primary">Go back to Events</Button>
-                            <br /><br />
+                            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
                         </div> : null}
 
 
@@ -267,6 +273,7 @@ bookIt=()=>{
                                     </Form.Group>
                                 </Form.Row>
                             </Form>
+
                             <Button href="" onClick={() => {
                                 this.bookIt()
                                   }} block style={{ width: '270px', margin: '2% auto 0 auto' }} variant={"success"}>CONFIRM</Button>
@@ -275,7 +282,16 @@ bookIt=()=>{
                             <br/> <br/> 
                             <Button href="/" onClick={() => { this.setState({ showPay: false, showBook: false, showEvent: false, showAll: true, coffeeName: "", startingTime: "", endingTime: "" }) }} block style={{ width: '180px', margin: '0 auto 5% auto' }} variant="outline-primary">Go back to Events</Button>
                         
+
                         </div>: null}
+
+
+                        {this.state.showEnd == true ?
+                                <div style={{margin:'40% auto', textAlign:'center'}}>
+<Button href="#topOfPage" onClick={() => { this.setState({ showEnd: false,showPay: false, showBook: false, showEvent: false, showAll: true, coffeeName: "", startingTime: "", endingTime: "" }) }} block style={{ width: '180px', margin: '0 auto 5% auto' }} variant="outline-primary">Go back to Events</Button>
+                                <h1>Your Event have been booked</h1>
+                                <h2>Thank you for using our service</h2>
+                                </div>:null}
                 
 
                 {/* The end div */}

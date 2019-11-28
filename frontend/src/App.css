@@ -107,8 +107,8 @@ body{
   }
 
   #Card-Margin{
-    margin-left: auto;
-    margin-right: auto;
+    width: 180px;
+    padding: 0;
   }
 
 }
@@ -143,8 +143,12 @@ body{
   
 }
 
-@media only screen and (max-width: 649px){
+@media only screen and (max-width: 574px){
   
+  #Card-Margin{
+    margin-left: auto;
+    margin-right: auto;
+  }
 
 }
 
@@ -233,3 +237,21 @@ body{
   background: url(https://i.imgur.com/vhhhiyl.png) 96% / 10% no-repeat #eee;
 }
 
+
+@media only screen and (min-width:991px ) and (max-width:1329px){
+
+  #Card-Margin{
+    margin-left: 5%;
+    
+  }
+
+}
+
+@media only screen and (min-width:768px ) and (max-width:877px){
+
+  #Card-Margin{
+    margin-left: 3%;
+    
+  }
+
+}
