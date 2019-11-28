@@ -80,7 +80,7 @@ export default class AllEvents extends Component {
                                                 return (
                                                     <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12 mb-2" id="Card-Margin" style={{ width: 'auto', }}>
                                                         <Card style={{ width: '170px', border: 'none', marginTop: '60px', marginLeft: 'auto', marginRight: 'auto', display: 'block' }}>
-                                                            <Card.Img href="#topOfPage" onClick={() => { this.setState({ showEvent: true, showAll: false, coffeeName: data.coffeeName, startingTime: data.startingTime, endingTime: data.endingTime }) }} id="Card-Image-home" variant="top" src="https://i.imgur.com/PU5Zex0.jpg" />
+                                                            <Card.Img href="#topOfPage" onClick={() => { this.setState({ showEvent: true, showAll: false, coffeeName: data.coffeeName, startingTime: data.startingTime, endingTime: data.endingTime }) }} id="Card-Image-home" variant="top" src={data.photo} />
                                                             <Card.Body class="text-left" style={{ width: '147px', height: '50px', margin: '0 auto' }}>
                                                                 <Card.Title style={{ fontSize: '16px', textAlign: 'left', marginTop: '7px' }}>{data.coffeeName}</Card.Title>
                                                                 <Card.Text style={{ fontSize: '13px' }}>
@@ -117,8 +117,7 @@ export default class AllEvents extends Component {
                                         id="CarouselImg"
                                     />
                                     <Carousel.Caption>
-                                        <h3>First slide label</h3>
-                                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                        
                                     </Carousel.Caption>
                                 </Carousel.Item>
                                 <Carousel.Item id="CarouselEvent">
@@ -130,8 +129,7 @@ export default class AllEvents extends Component {
                                     />
 
                                     <Carousel.Caption>
-                                        <h3>Second slide label</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                      
                                     </Carousel.Caption>
                                 </Carousel.Item>
                                 <Carousel.Item id="CarouselEvent">
@@ -143,8 +141,7 @@ export default class AllEvents extends Component {
                                     />
 
                                     <Carousel.Caption>
-                                        <h3>Third slide label</h3>
-                                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                                        
                                     </Carousel.Caption>
                                 </Carousel.Item>
                             </Carousel>
@@ -157,7 +154,7 @@ export default class AllEvents extends Component {
                         <div>
                             <h2 style={{ display: 'inline-block', marginLeft: '15%', fontSize: '3vw', marginTop: '4%' }}><MdLocationOn style={{ marginLeft: '-50px' }} />           Location</h2>
                             <h2 style={{ display: 'inline-block', float: 'right', marginRight: '8%', fontSize: '3vw' }}>200 SAR</h2>
-                            <p style={{ marginLeft: '15.5%', marginTop: '2%', fontSize: '2vw', fontWeight: 'bold' }}>Link:</p>
+                            <p style={{ marginLeft: '15.5%', marginTop: '2%', fontSize: '2vw', fontWeight: 'bold' }}>GoogleMaps:<a href="/">link</a></p>
                             <p style={{ marginLeft: '15.5%', marginTop: '-1%', fontSize: '2vw', fontWeight: 'bold' }}>startingTime: {this.state.startingTime}</p>
                         </div>
                         <br />
