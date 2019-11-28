@@ -4,8 +4,9 @@ import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './Signin.css'
 import SweetAlert from 'sweetalert2-react';
+import {withRouter} from 'react-router-dom'
 
-export default class Singin extends Component {
+class Singin extends Component {
 state ={
   wrong : false
 }
@@ -15,9 +16,12 @@ this.setState({
 })
 }
 submit = (e)=>{
+
   e.preventDefault()
+  
 axios.post('http://localhost:5100/users/login' , this.state)
 .then(res =>{
+  console.log(res.data)
   if (res.data.msg == "Password is not currect"){
 
 this.setState({wrong : true})
@@ -27,7 +31,7 @@ this.setState({wrong : true})
   }else {
 
 localStorage.setItem('usertoken' , res.data)
-    
+this.props.isLogin()
     
     
     this.setState({ show: true })
@@ -83,3 +87,6 @@ localStorage.setItem('usertoken' , res.data)
         )
     }
 }
+
+
+export default withRouter(Singin)

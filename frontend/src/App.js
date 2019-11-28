@@ -24,7 +24,9 @@ import Signin from './components/sign/Signin'
 import Home from './components/Home'
 import ChangePassword from './components/ChangePassword/ChangePassword'
 import Axios from 'axios';
-import ErrorPath from './components/ErrorPath'
+
+import Profile from './components/profile/Pofile';
+
 
 
 export default class App extends Component {
@@ -34,7 +36,8 @@ export default class App extends Component {
     showAll: true,
     token: null,
     hideThem: false,
-    data: data1
+    data: data1,
+    isLogin : false 
   }
   componentDidMount() {
 
@@ -52,7 +55,17 @@ console.log('i am idiot');
   }
   logout = () => {
     localStorage.removeItem("usertoken");
+    this.setState({token:null})
+    
+    this.isLogin()
+    
 
+  }
+  isLogin =()=>{
+
+    this.setState({
+     isLogin : !this.state.isLogin ,
+    })
   }
   render() {
     console.log("data 1 is :=")
@@ -62,8 +75,9 @@ console.log('i am idiot');
 
         <BrowserRouter>
           <Navbar bg="light" expand="sm">
-            <Navbar.Brand style={{ fontSize: '24px', fontWeight: 'bolder' }} href="/"><img style={{ marginRight: '10px' }} alt="" src="https://i.imgur.com/eFCHtTt.png" width="30" height="30" />COFFEVENT</Navbar.Brand>
-            {this.state.token ?
+
+            <Navbar.Brand style={{ fontSize: '24px', fontWeight: 'bolder' }} href="#"><img style={{ marginRight: '10px' }} alt="" src="https://i.imgur.com/eFCHtTt.png" width="30" height="30" />COFFEVENT</Navbar.Brand>
+            {this.state.isLogin || this.state.token !== null?
 
 
               <NavDropdown drop={'down'}
@@ -73,8 +87,7 @@ console.log('i am idiot');
 
 
                 id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">My Profile</NavDropdown.Item>
-                <NavDropdown.Item href="">My Events</NavDropdown.Item>
+                <NavDropdown.Item href="/Profile">My Profile</NavDropdown.Item>  
                 <NavDropdown.Item href="/ChangePass">Change Password</NavDropdown.Item>
                 <NavDropdown.Item onClick={this.logout}>Logout</NavDropdown.Item>
 
@@ -105,8 +118,9 @@ console.log('i am idiot');
             <Route path="/CoffeeShops" component={Allshops} />
             <Route path="/CreateEvent" component={CreateEvent} />
             <Route path="/Register" component={createAcc}/>
-            <Route path="/SignIn" component={Signin} />
+            <Route path="/SignIn" render ={()=> <Signin isLogin={this.isLogin} />} />
             <Route path="/ChangePass" component={ChangePassword} />
+            <Route path="/Profile" component={Profile} />
 
             <Route path="/error" component={ErrorPath}/>
             

@@ -21,7 +21,7 @@ export default class Singin extends Component {
             <Form.Control type="password" placeholder="Password"  name="newPassword" onChange={this.onChange}/>
           </Form.Group>
         
-          <Button variant="primary" type="submit">
+          <Button variant="primary" type="submit" href="/">
             Submit
           </Button>
         </Form>

@@ -7,6 +7,7 @@ import axios from "axios"
 import { FiMinusCircle } from 'react-icons/fi'
 import { IoMdAddCircleOutline } from 'react-icons/io'
 import React, { Component } from 'react'
+import jwt from 'jsonwebtoken'
 
 
 
@@ -25,12 +26,26 @@ export default class AllEvents extends Component {
         showPay: false,
         showEnd:false,
         ticketsNumber: 1,
-        totalPrice: 200
+        totalPrice: 200,
+        eventData: ''
     }
 
 
 
+bookIt=()=>{
+    console.log('here we go agian');
+    
+    this.setState({ showPay: true, showBook: false, showEvent: false, showAll: false, coffeeName: "", startingTime: "", endingTime: "" })
+    if(localStorage.usertoken){
+        axios.post('http://localhost:5100/users/book/'+localStorage.usertoken,this.state.eventData)
+        .then(data =>  this.props.history.push('/home'))
+        .catch(err => console.log(err)
+        )
 
+
+    }
+    
+}
 
 
 
@@ -80,7 +95,10 @@ export default class AllEvents extends Component {
                                                 return (
                                                     <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12 mb-2" id="Card-Margin" style={{ width: 'auto', }}>
                                                         <Card style={{ width: '170px', border: 'none', marginTop: '60px', marginLeft: 'auto', marginRight: 'auto', display: 'block' }}>
-                                                            <Card.Img href="#topOfPage" onClick={() => { this.setState({ showEvent: true, showAll: false, coffeeName: data.coffeeName, startingTime: data.startingTime, endingTime: data.endingTime }) }} id="Card-Image-home" variant="top" src={data.photo} />
+
+                                                            <Card.Img href="#topOfPage" onClick={() => { this.setState({ showEvent: true, showAll: false, coffeeName: data.coffeeName, startingTime: data.startingTime, endingTime: data.endingTime, eventData:data}) }} id="Card-Image-home" variant="top" src="https://i.imgur.com/PU5Zex0.jpg" />
+
+                                                          
                                                             <Card.Body class="text-left" style={{ width: '147px', height: '50px', margin: '0 auto' }}>
                                                                 <Card.Title style={{ fontSize: '16px', textAlign: 'left', marginTop: '7px' }}>{data.coffeeName}</Card.Title>
                                                                 <Card.Text style={{ fontSize: '13px' }}>
@@ -255,12 +273,16 @@ export default class AllEvents extends Component {
                                     </Form.Group>
                                 </Form.Row>
                             </Form>
-                            <Button href="" onClick={() => { this.setState({ showEnd:true,showPay: false, showBook: false, showEvent: false, showAll: false, coffeeName: "", startingTime: "", endingTime: "" }) }} block style={{ width: '270px', margin: '2% auto 0 auto' }} variant={"success"}>CONFIRM</Button>
+
+                            <Button href="" onClick={() => {
+                                this.bookIt()
+                                  }} block style={{ width: '270px', margin: '2% auto 0 auto' }} variant={"success"}>CONFIRM</Button>
                             <br/>
                             </div> 
                             <br/> <br/> 
-                            <Button href="#topOfPage" onClick={() => { this.setState({ showPay: false, showBook: false, showEvent: false, showAll: true, coffeeName: "", startingTime: "", endingTime: "" }) }} block style={{ width: '180px', margin: '0 auto 5% auto' }} variant="outline-primary">Go back to Events</Button>
-                            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                            <Button href="/" onClick={() => { this.setState({ showPay: false, showBook: false, showEvent: false, showAll: true, coffeeName: "", startingTime: "", endingTime: "" }) }} block style={{ width: '180px', margin: '0 auto 5% auto' }} variant="outline-primary">Go back to Events</Button>
+                        
+
                         </div>: null}
 
 
