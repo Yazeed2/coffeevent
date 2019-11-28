@@ -56,7 +56,6 @@ router.post('/create', (req,res)=>{
    
 // })
 
-
 //create the coffee shop 
 router.post('/coffeShop', (req, res)=>{
     let shop = {

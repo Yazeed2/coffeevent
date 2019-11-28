@@ -11,7 +11,7 @@ const Navigation = () => {
             <Navbar.Brand style={{ fontSize: '24px', fontWeight: 'bolder'}} href="/home"><img style={{marginRight:'10px'}} alt="" src="https://i.imgur.com/eFCHtTt.png" width="30" height="30"/>COFFEVENT</Navbar.Brand>
             
     
-      {/* <span className="AccountLabel">Account</span> */}
+      {/* <span className="AccountLabel"> Account</span> */}
 
     
       <div id="accountLogo">

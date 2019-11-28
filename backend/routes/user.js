@@ -86,14 +86,43 @@ router.post('/changepassword/:token' , (req , res)=>{
     bcrypt.hash(req.body.newPassword, 10, (err, hash) => {
         var password = hash
         User.findByIdAndUpdate(decoded.user._id , {password:password  }  )
-        .then(user => res.json({msg :`the password has change `  , user :user}))
+        .then(user => res.send({msg :`the password has change `  , user :user}))
         .catch(err => res.send(err))
     })
  
 
 })
-// get all user 
 
+//book event
+
+router.post('/book/:token',(req,res)=>{
+    var decoded = jwt.verify(req.params.token, 'secret')
+console.log(decoded.user._id);
+ User.findByIdAndUpdate(decoded.user._id, { $push : {createdEvents:req.body}})
+ .then(data => console.log(data))
+ .catch(err=>res.send(err))
+})
+
+
+//gets booked events 
+router.get('/data/:id', (req,res)=>{
+    User.findById(req.params.id)
+    .then(data => res.send(data.createdEvents))
+    .catch(err => console.log(err))
+})
+
+
+//return
+
+router.post('/return/:id',(req,res)=>{
+    console.log(req.body);
+    User.findByIdAndUpdate(req.params.id, {createdEvents: req.body})
+    .then(data => console.log(data))
+    .catch(err=> res.send(err))
+})
+
+
+// get all user 
 router.get('/alluser' , (req , res)=>{
 
     User.find()

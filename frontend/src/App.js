@@ -34,7 +34,8 @@ export default class App extends Component {
     showAll: true,
     token: null,
     hideThem: false,
-    data: data1
+    data: data1,
+    isLogin : false 
   }
   componentDidMount() {
 
@@ -52,7 +53,17 @@ console.log('i am idiot');
   }
   logout = () => {
     localStorage.removeItem("usertoken");
+    this.setState({token:null})
+    
+    this.isLogin()
+    
 
+  }
+  isLogin =()=>{
+
+    this.setState({
+     isLogin : !this.state.isLogin ,
+    })
   }
   render() {
     console.log("data 1 is :=")
@@ -63,7 +74,7 @@ console.log('i am idiot');
         <BrowserRouter>
           <Navbar bg="light" expand="sm">
             <Navbar.Brand style={{ fontSize: '24px', fontWeight: 'bolder' }} href="#"><img style={{ marginRight: '10px' }} alt="" src="https://i.imgur.com/eFCHtTt.png" width="30" height="30" />COFFEVENT</Navbar.Brand>
-            {this.state.token ?
+            {this.state.isLogin || this.state.token !== null?
 
 
               <NavDropdown drop={'down'}
@@ -103,7 +114,7 @@ console.log('i am idiot');
             <Route path="/CoffeeShops" component={Allshops} />
             <Route path="/CreateEvent" component={CreateEvent} />
             <Route path="/Register" component={createAcc}/>
-            <Route path="/SignIn" component={Signin} />
+            <Route path="/SignIn" render ={()=> <Signin isLogin={this.isLogin} />} />
             <Route path="/ChangePass" component={ChangePassword} />
             <Route path="/Profile" component={Profile} />
 
