@@ -23,6 +23,7 @@ export default class AllEvents extends Component {
         showBook: false,
         hideBook: true,
         showPay: false,
+        showEnd:false,
         ticketsNumber: 1,
         totalPrice: 200
     }
@@ -48,10 +49,15 @@ export default class AllEvents extends Component {
     //     }
     //cehck
     render() {
+        // console.log(this.props.location.state.titlee);
+        
         return (
 
             <div>
                 <a id="topOfPage"></a>
+
+                
+
                 {this.state.ticketsNumber == 0 ? this.setState({ ticketsNumber: 1 }) : null}
                 {this.state.totalPrice < 200 ? this.setState({ totalPrice: 200 }) : null}
                 {this.state.totalPrice == 400 ? null : this.state.ticketsNumber == 2 ? this.setState({ totalPrice: 400 }) : null}
@@ -190,7 +196,7 @@ export default class AllEvents extends Component {
                             <Button href="#topOfPage" onClick={() => { this.setState({ showPay: true, showBook: false, showEvent: false, showAll: false, coffeeName: "", startingTime: "", endingTime: "" }) }} style={{ width: '300px' }} variant={"secondary"}>Payment</Button>
                             <br />
                             <Button href="#topOfPage" onClick={() => { this.setState({ showBook: false, showEvent: false, showAll: true, coffeeName: "", startingTime: "", endingTime: "" }) }} style={{ marginTop: '20px' }} variant="outline-primary">Go back to Events</Button>
-                            <br /><br />
+                            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
                         </div> : null}
 
 
@@ -252,13 +258,21 @@ export default class AllEvents extends Component {
                                     </Form.Group>
                                 </Form.Row>
                             </Form>
-                            <Button href="" onClick={() => { this.setState({ showPay: true, showBook: false, showEvent: false, showAll: false, coffeeName: "", startingTime: "", endingTime: "" }) }} block style={{ width: '270px', margin: '2% auto 0 auto' }} variant={"success"}>CONFIRM</Button>
+                            <Button href="" onClick={() => { this.setState({ showEnd:true,showPay: false, showBook: false, showEvent: false, showAll: false, coffeeName: "", startingTime: "", endingTime: "" }) }} block style={{ width: '270px', margin: '2% auto 0 auto' }} variant={"success"}>CONFIRM</Button>
                             <br/>
                             </div> 
                             <br/> <br/> 
                             <Button href="#topOfPage" onClick={() => { this.setState({ showPay: false, showBook: false, showEvent: false, showAll: true, coffeeName: "", startingTime: "", endingTime: "" }) }} block style={{ width: '180px', margin: '0 auto 5% auto' }} variant="outline-primary">Go back to Events</Button>
-                        
+                            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
                         </div>: null}
+
+
+                        {this.state.showEnd == true ?
+                                <div style={{margin:'40% auto', textAlign:'center'}}>
+<Button href="#topOfPage" onClick={() => { this.setState({ showEnd: false,showPay: false, showBook: false, showEvent: false, showAll: true, coffeeName: "", startingTime: "", endingTime: "" }) }} block style={{ width: '180px', margin: '0 auto 5% auto' }} variant="outline-primary">Go back to Events</Button>
+                                <h1>Your Event have been booked</h1>
+                                <h2>Thank you for using our service</h2>
+                                </div>:null}
                 
 
                 {/* The end div */}

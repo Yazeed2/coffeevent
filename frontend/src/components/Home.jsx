@@ -3,7 +3,7 @@ import { Row, Button, Jumbotron, Container, Carousel } from 'react-bootstrap'
 import HomePage from './HomePage'
 import Search from './Search/Search'
 import data1 from '../Tempdata'
-
+import {Link} from 'react-router-dom'
 
 export default class Home extends Component {
   state = {
@@ -132,7 +132,7 @@ export default class Home extends Component {
 <br />
 
 
-             <button onClick={()=>{console.log(this.state.timeuntill)}} class="buttonSearchzz">Search</button>
+<Link to={{ pathname: `/AllEvents`}}><button onClick={()=>{console.log(this.state.timeuntill)}} class="buttonSearchzz">Search</button></Link>
 
              <br />
              <br />
@@ -154,7 +154,7 @@ export default class Home extends Component {
         </Row>
         {this.state.showAll ?
           <div style={{ textAlign: 'center' }}>
-            <Button className="ShowHideButton" onClick={() => { this.setState({ arry: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], showAll: false, hideThem: true }) }}>Show all</Button>
+            <Button className="ShowHideButton" onClick={() => { this.setState({ arry: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], showAll: false, hideThem: true }) }}>Show more</Button>
           </div>
           : null}
         {this.state.hideThem ?
@@ -172,7 +172,7 @@ export default class Home extends Component {
         </Row>
         {this.state.showscnd ?
           <div style={{ textAlign: 'center' }}>
-            <Button className="ShowHideButton" onClick={() => { this.setState({ arry2: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], showscnd: false, hidescnd: true }) }}>Show all</Button>
+            <Button className="ShowHideButton" onClick={() => { this.setState({ arry2: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], showscnd: false, hidescnd: true }) }}>Show more</Button>
           </div>
           : null}
         {this.state.hidescnd?

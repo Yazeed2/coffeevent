@@ -62,7 +62,7 @@ console.log('i am idiot');
 
         <BrowserRouter>
           <Navbar bg="light" expand="sm">
-            <Navbar.Brand style={{ fontSize: '24px', fontWeight: 'bolder' }} href="#"><img style={{ marginRight: '10px' }} alt="" src="https://i.imgur.com/eFCHtTt.png" width="30" height="30" />COFFEVENT</Navbar.Brand>
+            <Navbar.Brand style={{ fontSize: '24px', fontWeight: 'bolder' }} href="/"><img style={{ marginRight: '10px' }} alt="" src="https://i.imgur.com/eFCHtTt.png" width="30" height="30" />COFFEVENT</Navbar.Brand>
             {this.state.token ?
 
 
@@ -88,10 +88,11 @@ console.log('i am idiot');
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ml-auto">
 
-
+                
                 <Nav.Link href="/AllEvents" >All Events</Nav.Link>
                 <Nav.Link href="/CoffeeShops">Coffee Shops</Nav.Link>
                 <Nav.Link href="/CreateEvent">Create Event</Nav.Link>
+                
 
               </Nav>
 
